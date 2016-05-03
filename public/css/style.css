@@ -3,7 +3,7 @@
 }
 
 .carousel-image {
-	margin-left: auto; 
+	margin-left: auto;
 	margin-right: auto;"
 }
 
@@ -96,4 +96,8 @@
 .footer-bottom a:hover {
 	color: #fea329;
 	text-decoration: none;
+}
+
+.modal {
+	top: 120px;
 }
