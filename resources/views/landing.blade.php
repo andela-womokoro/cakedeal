@@ -1,5 +1,5 @@
 @extends('shared.master')
-@section('title', 'Cake Booking')
+@section('title', 'CakeDeal')
 
 @section('content')
 

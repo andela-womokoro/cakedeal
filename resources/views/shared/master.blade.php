@@ -24,7 +24,7 @@
                 <div class="col-md-8" style="padding-top: 15px; text-align: right;">
                     <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href=""><i class="fa fa-google" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@
         <div class="container">
            <div class="row">
                 <div class="col-md-12" style="padding-top: 25px; text-align: center;">
-                    Copyright &copy; 2016 cakedelivery.com. All rights reserved. Powered by <a href="https://laravel.com/">Laravel</a>. Designed by <a href="https://github.com/andela-womokoro">Wilson Omokoro</a> and <a href="https://github.com/andela-sakande">Sirajudeen Akande</a>, from <a href="http://www.andela.com/">Andela</a>.
+                    Copyright &copy; 2016 cakedelivery.com. All rights reserved. Powered by <a href="https://laravel.com/">Laravel</a>. Designed by <a href="https://github.com/andela-womokoro">Wilson Omokoro</a> and <a href="https://github.com/andela-sakande">Surajudeen Akande</a>, from <a href="http://www.andela.com/">Andela</a>.
                 </div>
             </div>
         </div>
