@@ -57,17 +57,56 @@ class AuthController extends Controller
     }
 
     /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
+     * checks if user exists then creates new if user does not exist.
      */
-    protected function create(array $data)
+    private function findOrCreateUser($theUser, $provider)
     {
+        $authUser = User::where('uid', $theUser->id)->first();
+        $username = isset($theUser->user['first_name']) ? $theUser->user['first_name'] : $theUser->nickname;
+        if ($authUser) {
+            return $authUser;
+        }
+        if (User::where('username', $theUser->nickname)->first()) {
+            $user = factory(User::class)->make([
+              'username'    => $username,
+              'email'       => $theUser->email,
+              'provider'    => $provider,
+              'uid'         => $theUser->id,
+              'avatar_url'  => $theUser->avatar,
+          ]);
+        }
+
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+          'username'   => $username,
+          'email'      => $theUser->email,
+          'provider'   => $provider,
+          'uid'        => $theUser->id,
+          'avatar_url' => $theUser->avatar,
+      ]);
     }
+
+    /**
+     *  Redirects to provider authentication page.
+     */
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    /**
+     *  Logs in user with their social media credentials.
+     */
+    public function handleProviderCallback($provider)
+    {
+        try {
+            $user = Socialite::driver($provider)->user();
+        } catch (Exception $e) {
+            return Redirect::to('auth/'.$provider);
+        }
+        $authUser = $this->findOrCreateUser($user, $provider);
+        Auth::loginUsingId($authUser->id, true);
+
+        return Redirect::to($this->redirectTo);
+    }
+
 }
