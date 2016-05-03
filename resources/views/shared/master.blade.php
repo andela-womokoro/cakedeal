@@ -34,7 +34,7 @@
            <div class="row">
                 <div class="col-md-3">
                     <span class="title-left"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp;CAKE</span>
-                    <span class="title-right">DELIVERY</span>
+                    <span class="title-right">DEAL</span>
                 </div>
                 <div class="col-md-9">
                     <a href=""><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Sell Cakes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
