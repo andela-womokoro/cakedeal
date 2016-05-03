@@ -37,8 +37,8 @@
                     <span class="title-right">DEAL</span>
                 </div>
                 <div class="col-md-9">
-                    <a href=""><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Sell Cakes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Order Cake</a>
+                    <a href="auth/register"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;Register</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="auth/login"><i class="fa fa-sign-in" aria-hidden="true"></i></i>&nbsp;Login</a>
                 </div>
             </div>
         </div>
