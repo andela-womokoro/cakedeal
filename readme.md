@@ -1,6 +1,6 @@
 # CakeDeal
 
-CakeDeal is a meeting point for all cake lovers, sellers and buyers. Why not book your anniversary cakes on this platform and also suprise yout colleagues by getting the best deals for you and for them.
+CakeDeal is a meeting point for all cake lovers, sellers and buyers. Why not book your anniversary cakes on this platform and also suprise your colleagues by getting the best deals for you and for them.
 
 
 ## Maintainance
