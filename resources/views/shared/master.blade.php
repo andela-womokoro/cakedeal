@@ -10,8 +10,8 @@
     <!--<link href="/css/bootstrap.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.min.css">
     <link rel="stylesheet" href="/css/style.css">
-</head>
 <body>
     <!-- Navigation bar -->
     <nav class="navbar navbar-default top-navbar">
@@ -39,7 +39,7 @@
                     </a>
                 </div>
                 <div class="col-md-9">
-                    <a href="auth/login"><i class="fa fa-sign-in" aria-hidden="true"></i></i>&nbsp;Login</a>
+                    <a href="" data-toggle="modal" data-target="#LoginModal"><i class="fa fa-sign-in" aria-hidden="true"></i></i>&nbsp;Login</a>
                 </div>
             </div>
         </div>
@@ -56,6 +56,31 @@
             </div>
         </div>
     </nav>
+        <!-- Modal -->
+        <div id="LoginModal" class="modal fade in" role="dialog">
+          <div class="modal-dialog modal-sm">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+          <a href="/auth/facebook" class="btn btn-block btn-social btn-facebook">
+            <span class="fa fa-facebook"></span>
+            Connect with Facebook
+          </a>
+          <a href="/auth/google" class="btn btn-block btn-social btn-google">
+            <span class="fa fa-google"></span>
+            Connect with Gmail
+          </a>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
 
     @yield('content')
 
