@@ -50,7 +50,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="centered-heading"><h4>CATEGORIES</h4></div>
-            <div class="category-block">
+            <div class="category-block shadow1">
                 <a href=""><h5>BIRTHDAY CAKES</h5></a>
                 <a href=""><h5>WEDDING CAKES</h5></a>
                 <a href=""><h5>ALL OCCASSIONS CAKES</h5></a>
@@ -63,13 +63,13 @@
         <div class="col-md-9">
             <div class="row centered-heading"><h4>FEATURED CAKES</h4></div>
             <center>
-                <div class="col-md-4 featured">
+                <div class="col-md-4 featured shadow1">
                     <img src="images/featured1.jpg" border="0" />
                 </div>
-                <div class="col-md-4 featured">
+                <div class="col-md-4 featured shadow1">
                     <img src="images/featured2.jpg" border="0" />
                 </div>
-                <div class="col-md-4 featured">
+                <div class="col-md-4 featured shadow1">
                     <img src="images/featured3.jpg" border="0" />
                 </div>
             </center>
