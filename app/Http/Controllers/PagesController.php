@@ -15,6 +15,6 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-        return view();
+        return view('app.index');
     }
 }
