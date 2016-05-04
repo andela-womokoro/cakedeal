@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
+use Redirect;
 use App\User;
 use Validator;
 use Socialite;
@@ -29,7 +31,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new authentication controller instance.
@@ -53,6 +55,21 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+        ]);
+    }
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return User
+     */
+    protected function create(array $data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
         ]);
     }
 
@@ -109,4 +126,16 @@ class AuthController extends Controller
         return Redirect::to($this->redirectTo);
     }
 
+
+    /**
+     * Logs out an authentiacated user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getLogOut()
+    {
+        Auth::logout();
+
+        return redirect()->route('index');
+    }
 }

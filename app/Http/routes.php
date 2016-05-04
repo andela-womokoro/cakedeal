@@ -16,12 +16,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
    
     Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
-    
-    Route::get('/', function () {
-        return view('landing');
-    });
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    });
+    Route::get('/logout', 'Auth\AuthController@getLogout');
+    Route::get('/', ['uses' => 'PagesController@index', 'as' => 'index']);
+    Route::get('/dashboard', 'PagesController@dashboard');
 });
