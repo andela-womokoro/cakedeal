@@ -19,7 +19,7 @@
            <div class="row">
                 <div class="col-md-4" style="padding-top: 15px; text-align: left;">
                     <a href=""><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;+234 803 000 0000</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href=""><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;info@cakedelivery.com</a>
+                    <a href=""><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;info@cakedeal.com</a>
                 </div>
                 <div class="col-md-8" style="padding-top: 15px; text-align: right;">
                     <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -33,8 +33,10 @@
         <div class="container">
            <div class="row">
                 <div class="col-md-3">
-                    <span class="title-left"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp;CAKE</span>
-                    <span class="title-right">DEAL</span>
+                    <a href="/">
+                        <span class="title-left"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp;CAKE</span>
+                        <span class="title-right">DEAL</span>
+                    </a>
                 </div>
                 <div class="col-md-9">
                     <a href="" data-toggle="modal" data-target="#LoginModal"><i class="fa fa-sign-in" aria-hidden="true"></i></i>&nbsp;Login</a>
@@ -85,9 +87,29 @@
     <!-- Footer -->
     <nav class="navbar navbar-default footer-top">
         <div class="container">
-           <div class="row">
+           <div class="row" style="padding-top: 25px;">
+                <div class="col-sm-2">
+                    <span class="title-left">CAKE</span>
+                    <span class="title-right">DEAL</span>
+                    <br clear="left" />
+                </div>
+                <div class="col-sm-2">
+                     <div class="dealer-thumbs"></div>
+                </div>
+                <div class="col-sm-2">
+                     <div class="dealer-thumbs"></div>
+                </div>
+                <div class="col-sm-2">
+                     <div class="dealer-thumbs"></div>
+                </div>
+                <div class="col-sm-2">
+                     <div class="dealer-thumbs"></div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
                 <div class="col-md-12" style="padding-top: 25px; text-align: center;">
-                   <br />
+                    <br />
                 </div>
             </div>
         </div>
@@ -95,7 +117,7 @@
     <nav class="navbar navbar-default footer-bottom">
         <div class="container">
            <div class="row">
-                <div class="col-md-12" style="padding-top: 25px; text-align: center;">
+                <div class="col-md-12" style="padding-top: 25px; text-align: center; font-size:12px;">
                     Copyright &copy; 2016 cakedeal.com. All rights reserved. Powered by <a href="https://laravel.com/">Laravel</a>. Designed by <a href="https://github.com/andela-womokoro">Wilson Omokoro</a> and <a href="https://github.com/andela-sakande">Surajudeen Akande</a>, from <a href="http://www.andela.com/">Andela</a>.
                 </div>
             </div>
