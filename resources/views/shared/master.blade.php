@@ -57,55 +57,57 @@
             </div>
         </div>
     </nav>
-        <!-- Modal -->
-        <div id="LoginModal" class="modal fade in" role="dialog">
-          <div class="modal-dialog modal-sm">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"></h4>
-          <a href="/auth/facebook" class="btn btn-block btn-social btn-facebook">
-            <span class="fa fa-facebook"></span>
-            Connect with Facebook
-          </a>
-          <a href="/auth/google" class="btn btn-block btn-social btn-google">
-            <span class="fa fa-google"></span>
-            Connect with Gmail
-          </a>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-            </div>
+    <!-- Modal -->
+    <div id="LoginModal" class="modal fade in" role="dialog">
+      <div class="modal-dialog modal-sm">
 
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <br /><br />
+      <h4 class="modal-title"></h4>
+      <a href="/auth/facebook" class="btn btn-block btn-social btn-facebook">
+        <span class="fa fa-facebook"></span>
+        Login with Facebook
+      </a>
+      <a href="/auth/google" class="btn btn-block btn-social btn-google">
+        <span class="fa fa-google"></span>
+        Login with Google
+      </a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
+      </div>
+    </div>
 
     @include('sweet::alert')
+
     @yield('content')
 
     <!-- Footer -->
     <nav class="navbar navbar-default footer-top">
         <div class="container">
            <div class="row" style="padding-top: 25px;">
-                <div class="col-sm-2">
+                <div class="col-md-2">
                     <span class="title-left">CAKE</span>
                     <span class="title-right">DEAL</span>
                     <br clear="left" />
                 </div>
-                <div class="col-sm-2">
-                     <div class="dealer-thumbs"></div>
+                <div class="col-md-2">
+                     <div class="dealer-thumbs shadow1"></div>
                 </div>
-                <div class="col-sm-2">
-                     <div class="dealer-thumbs"></div>
+                <div class="col-md-2">
+                     <div class="dealer-thumbs shadow1"></div>
                 </div>
-                <div class="col-sm-2">
-                     <div class="dealer-thumbs"></div>
+                <div class="col-md-2">
+                     <div class="dealer-thumbs shadow1"></div>
                 </div>
-                <div class="col-sm-2">
-                     <div class="dealer-thumbs"></div>
+                <div class="col-md-2">
+                     <div class="dealer-thumbs shadow1"></div>
                 </div>
             </div>
             <hr />

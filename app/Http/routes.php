@@ -14,7 +14,9 @@
 Route::group(['middleware' => ['web']], function () {
     /* Social media authentication */
     Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+   
     Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+
     Route::get('/logout', 'Auth\AuthController@getLogout');
     Route::get('/', ['uses' => 'PagesController@index', 'as' => 'index']);
     Route::get('/dashboard', 'PagesController@dashboard');
