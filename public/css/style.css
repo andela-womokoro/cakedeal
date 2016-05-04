@@ -1,5 +1,27 @@
 .container {
-	font-size: 11px;
+	color: #363432;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+}
+
+.centered-heading {
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	color: #fea329;
+}
+
+.category-block {
+	border: 1px solid #f7f7f0;
+	margin: 0px;
+	padding: 15px;
+}
+
+.category-block h5 {line-height: 22px;}
+
+.category-block a{
+	color: #696763;
+	text-decoration: none;
 }
 
 .carousel-image {
@@ -11,13 +33,13 @@
 	background-color: #f0f0e9;
 }
 
-.top-navbar a {
+.top-navbar a{
 	font-size: 14px;
 	font-family: 'Gill Sans';
 	color: #696763;
 }
 
-.top-navbar a:hover {
+.top-navbar a:hover, .category-block a:hover {
 	color: #888;
 	text-decoration: none;
 }
@@ -76,10 +98,19 @@
 	text-decoration: none;
 }
 
+.featured {
+	border: 1px solid #f7f7f0;
+	width: 250px;
+	height: 200px;
+	overflow: hidden;
+	margin:10px;
+}
+
 .footer-top {
-	min-height: 300px;
+	min-height: 400px;
 	background-color: #f0f0e9;
 	margin-bottom: 0px;
+	font-size:12px;
 }
 
 .footer-bottom {
@@ -96,6 +127,13 @@
 .footer-bottom a:hover {
 	color: #fea329;
 	text-decoration: none;
+}
+
+.dealer-thumbs {
+	width: 133px;
+	height: 61px;
+	border: 2px solid #ccccc6;
+	border-radius: 3px;
 }
 
 .modal {
