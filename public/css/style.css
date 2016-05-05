@@ -109,6 +109,7 @@
 
 .featured:hover {
 	opacity: 0.9;
+	border-style: double;
 }
 
 .shadow1 {
@@ -118,7 +119,6 @@
 }
 
 .footer-top {
-	min-height: 400px;
 	background-color: #f0f0e9;
 	margin-bottom: 0px;
 	font-size:12px;
@@ -129,13 +129,13 @@
 	margin-bottom: 0px;
 }
 
-.footer-bottom a {
+.footer-top a, .footer-bottom a {
 	font-family: 'Roboto', sans-serif;
     font-weight: 300;
 	color: #696763;
 }
 
-.footer-bottom a:hover {
+.footer-top a:hover, .footer-bottom a:hover {
 	color: #fea329;
 	text-decoration: none;
 }
@@ -154,4 +154,63 @@
 
 .modal {
 	top: 120px;
+}
+
+.form-container
+{
+    border: 0px solid #f7f7f0;
+    padding: 20px;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.form-container form input, .form-container form textarea {
+    background: #F0F0E9;
+    border: medium none;
+    color: #696763;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    height: 40px;
+    margin-bottom: 10px;
+    outline: medium none;
+    padding-left: 10px;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.form-container form textarea {
+    min-height: 100px;
+}
+/*
+input, select, textarea {
+    background: #F0F0E9;
+    border: 0;
+    color: #696763;
+    padding: 5px;
+    width: 100%;
+    border-radius: 0;
+    resize: none;
+}
+*/
+.form-container form button {
+    background: #FE980F;
+    border: medium none;
+    border-radius: 0;
+    color: #FFFFFF;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    padding: 6px 25px;
+}
+
+.form-container h2 {
+    color: #696763;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
 }

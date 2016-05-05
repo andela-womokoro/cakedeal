@@ -21,7 +21,7 @@
         <div class="item">
             <img src="/images/pic2.jpg" class="img-responsive carousel-image" alt="...">
             <div class="carousel-caption">
-                <h3>made from the highest quality ingredients to create unique flavors that are light and delicate</h3>
+                <h3>Made from the highest quality ingredients to create unique flavors that are light and delicate</h3>
             </div>
         </div>
         <div class="item">
