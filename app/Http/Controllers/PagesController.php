@@ -17,4 +17,9 @@ class PagesController extends Controller
     {
         return view('app.dashboard');
     }
+
+    public function profile()
+    {
+        return view('profile');
+    }
 }

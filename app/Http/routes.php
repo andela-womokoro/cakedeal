@@ -22,8 +22,10 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 
 // Protected routes
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/dashboard', 'PagesController@dashboard');
+    
 });
+Route::get('/dashboard', 'PagesController@dashboard');
+Route::get('/profile', 'PagesController@profile');
 
 Route::auth();
 
