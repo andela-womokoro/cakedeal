@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.min.css">
     <link rel="stylesheet" href="/css/style.css">
+</head>
 <body>
     <!-- Navigation bar -->
     <nav class="navbar navbar-default top-navbar">
@@ -34,7 +35,11 @@
         <div class="container">
            <div class="row">
                 <div class="col-md-3">
+                    @if (Auth::check())
+                    <a href="/dashboard">
+                    @else
                     <a href="/">
+                    @endif
                         <span class="title-left"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp;CAKE</span>
                         <span class="title-right">DEAL</span>
                     </a>
@@ -48,11 +53,17 @@
     <nav class="navbar bottom-navbar">
         <div class="container">
            <div class="row">
-                <div class="col-md-12">
-                    <a href="">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="">Our range</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="">Contact</a>
+                <div class="col-md-12"> 
+                    @if (Auth::check())
+                        <a href="/sell"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Sell Cakes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/buy"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Order Cake</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/profile"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @else
+                        <a href="">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="">Our range</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @endif
                 </div>
             </div>
         </div>
@@ -91,29 +102,35 @@
     <!-- Footer -->
     <nav class="navbar navbar-default footer-top">
         <div class="container">
-           <div class="row" style="padding-top: 25px;">
-                <div class="col-md-2">
-                    <span class="title-left">CAKE</span>
-                    <span class="title-right">DEAL</span>
-                    <br clear="left" />
+           @if (! Auth::check())
+               <div class="row" style="padding-top: 25px; padding-bottom: 50px; border-bottom:1px ridge #ddd;">
+                    <div class="col-md-2">
+                        <span class="title-left">CAKE</span>
+                        <span class="title-right">DEAL</span>
+                        <br clear="left" />
+                    </div>
+                    <div class="col-md-2">
+                         <div class="dealer-thumbs shadow1"></div>
+                    </div>
+                    <div class="col-md-2">
+                         <div class="dealer-thumbs shadow1"></div>
+                    </div>
+                    <div class="col-md-2">
+                         <div class="dealer-thumbs shadow1"></div>
+                    </div>
+                    <div class="col-md-2">
+                         <div class="dealer-thumbs shadow1"></div>
+                    </div>
                 </div>
-                <div class="col-md-2">
-                     <div class="dealer-thumbs shadow1"></div>
-                </div>
-                <div class="col-md-2">
-                     <div class="dealer-thumbs shadow1"></div>
-                </div>
-                <div class="col-md-2">
-                     <div class="dealer-thumbs shadow1"></div>
-                </div>
-                <div class="col-md-2">
-                     <div class="dealer-thumbs shadow1"></div>
-                </div>
-            </div>
-            <hr />
+            @endif
             <div class="row">
-                <div class="col-md-12" style="padding-top: 25px; text-align: center;">
-                    <br />
+                <div class="col-md-12" style="padding: 25px; text-align: center; font-size:12px;">
+                    <a href="">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="">Refund Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="">FAQs</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a href="">Careers</a>
                 </div>
             </div>
         </div>
