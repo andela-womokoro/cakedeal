@@ -11,13 +11,18 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    /* Social media authentication */
-    Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
-   
-    Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+/* Social media authentication */
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
-    Route::get('/logout', 'Auth\AuthController@getLogout');
-    Route::get('/', ['uses' => 'PagesController@index', 'as' => 'index']);
-    Route::get('/dashboard', 'PagesController@dashboard');
-});
+Route::get('/login', 'Auth\AuthController@getLogin');
+Route::get('/logout', 'Auth\AuthController@getLogout');
+
+/*
+|Pages Routes
+ */
+Route::get('/', ['uses' => 'PagesController@index', 'as' => 'index']);
+Route::get('/dashboard', ['uses' => 'PagesController@dashboard', 'middleware' => ['auth']]);
+
+Route::auth();
+

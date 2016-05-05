@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->enum('sex', ['female', 'male'])->nullable();;
             $table->string('avatar_url')->nullable();
             $table->string('provider')->nullable();
-            $table->bigInteger('uid')->nullable();
+            $table->float('uid')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

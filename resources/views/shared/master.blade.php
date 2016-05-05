@@ -40,7 +40,11 @@
                     </a>
                 </div>
                 <div class="col-md-9">
+                @if( ! Auth::check() )
                     <a href="" data-toggle="modal" data-target="#LoginModal"><i class="fa fa-sign-in" aria-hidden="true"></i></i>&nbsp;Login</a>
+                @else
+                    <a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log Out</a>
+                @endif
                 </div>
             </div>
         </div>
