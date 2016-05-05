@@ -93,7 +93,7 @@
       </a>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -112,19 +112,23 @@
                         <span class="title-left">CAKE</span>
                         <span class="title-right">DEAL</span>
                         <br clear="left" />
+                        <span style="font-size:11px; color: #898783">
+                        Top cake merchants
+                        </span>
                     </div>
-                    <div class="col-md-2">
-                         <div class="dealer-thumbs shadow1"></div>
-                    </div>
-                    <div class="col-md-2">
-                         <div class="dealer-thumbs shadow1"></div>
-                    </div>
-                    <div class="col-md-2">
-                         <div class="dealer-thumbs shadow1"></div>
-                    </div>
-                    <div class="col-md-2">
-                         <div class="dealer-thumbs shadow1"></div>
-                    </div>
+                    @for($i = 0; $i < 4; $i++)
+                        <div class="col-md-2">
+                            <center>
+                                 <img src="images/dealer_thumb.jpeg" class="dealer-thumbs shadow1" />
+                                 <br />
+                                 <span style="font-size:11px; color: #898783;">
+                                     <b>Jane Doe</b>
+                                     <br />Since 23 Dec 2015
+                                 </span>
+                             </center>
+                        </div>
+                    @endfor
+                    <div class="col-md-2"></div>
                 </div>
             @endif
             <div class="row">

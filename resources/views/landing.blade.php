@@ -63,15 +63,20 @@
         <div class="col-md-9">
             <div class="row centered-heading"><h4>FEATURED CAKES</h4></div>
             <center>
+                @for($i=0; $i<3; $i++)
                 <div class="col-md-4 featured shadow1">
                     <img src="images/featured1.jpg" border="0" />
+                    <div class="featured-footer">
+                        <div class="row centered-heading"><h4>&#8358; 3,500</h4></div>
+                        Cake name<br />
+                        <div class="form-container" style="padding:0px; margin:5px;">
+                            <form method="post">
+                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#LoginModal">Order Now</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 featured shadow1">
-                    <img src="images/featured2.jpg" border="0" />
-                </div>
-                <div class="col-md-4 featured shadow1">
-                    <img src="images/featured3.jpg" border="0" />
-                </div>
+                @endfor
             </center>
         </div>
     </div>
