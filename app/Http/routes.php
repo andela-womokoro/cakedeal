@@ -11,7 +11,7 @@
 |
 */
 
-// Pages Routes
+// Unprotected Routes
 Route::get('/', ['uses' => 'PagesController@index', 'as' => 'index']);
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout');
@@ -20,9 +20,15 @@ Route::get('/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
-// Protected routes
+
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/dashboard', 'PagesController@dashboard');
+	// Protected routes using 'auth' middleware
+	Route::get('/dashboard', 'PagesController@dashboard');
+	Route::get('/profile', 'UsersController@profile');
+	Route::get('/profile/update', 'UsersController@updateProfile');
+	Route::get('/product', 'ProductsController@getProducts');
+	Route::get('/product/upload', 'ProductsController@uploadProduct');
+	Route::get('/product/add', 'ProductsController@addProduct');
 });
 
 Route::auth();
