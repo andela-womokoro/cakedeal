@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Auth;
+use Alert;
 use Redirect;
 use App\User;
 use Validator;
@@ -126,15 +127,26 @@ class AuthController extends Controller
         return Redirect::to($this->redirectTo);
     }
 
+    /**
+     * Logs out an authentiacated user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getLogin()
+    {
+        return view('app.login');
+    }
+
 
     /**
      * Logs out an authentiacated user.
      *
      * @return \Illuminate\Http\Response
      */
-    public function getLogOut()
+    public function getLogout()
     {
         Auth::logout();
+        Alert::success('See you again!', 'miss you');
 
         return redirect()->route('index');
     }
