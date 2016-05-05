@@ -59,8 +59,9 @@
            <div class="row">
                 <div class="col-md-12"> 
                     @if (Auth::check())
-                        <a href="/sell"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Sell Cakes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/buy"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Order Cake</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Dashboard</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/product/upload"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Sell Cakes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/product"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Order Cake</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/profile"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     @else
                         <a href="">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
