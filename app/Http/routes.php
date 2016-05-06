@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth']], function () {
 	// Protected routes using 'auth' middleware
 	Route::get('/dashboard', 'PagesController@dashboard');
 	Route::get('/profile', 'UsersController@profile');
-	Route::get('/profile/update', 'UsersController@updateProfile');
+	Route::post('/profile/update', 'UsersController@updateProfile');
 	Route::get('/product', 'ProductsController@getProducts');
 	Route::get('/product/upload', 'ProductsController@uploadProduct');
 	Route::get('/product/add', 'ProductsController@addProduct');
