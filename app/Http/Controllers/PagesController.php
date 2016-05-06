@@ -31,6 +31,9 @@ class PagesController extends Controller
     	// $orderId = $request->input('order_id');
     	// dd($request->input('order_id'));
 
-        return view('order_details');
+        // return view('order_details');
+
+        $cakes = Product::all();
+        return view('app.dashboard', compact('cakes'));
     }
 }
