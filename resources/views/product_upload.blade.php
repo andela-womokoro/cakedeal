@@ -17,12 +17,20 @@
 	                    	<textarea rows="50" cols="" class="form-control" placeholder="Description (Optional)" name="description" value=""  maxlength="255"></textarea>
 	                    </div>
 	                    <div class="form-group">
+											  <select class="form-control" placeholder="Select Cake Category" id="sel1">
+											  @foreach($categories as $category)
+											    <option value="{{$category->id}}">{{$category->category}}</option>
+											   @endforech
+											  </select>
+											</div>
+	                    <div class="form-group">
 	                        <input type="text" class="form-control" placeholder="Price (e.g. 1200.95)" name="price" value=""  maxlength="5" required style="width:150px;">
 	                    </div>
 	                    <div class="form-group">
 	                        <input type="file" name="image_file" required style="background-color: #fff;" />
 	                    </div>
-	                    <button type="submit" class="btn btn-default">Post</button>
+	                    <button type="submit" class="btn btn-default">Add Cake</button>
+	                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 	                </form>
 	            </div>
             </div>
