@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace CakeDeal\Http\Controllers\Auth;
 
 use Auth;
 use Alert;
 use Redirect;
-use App\User;
+use CakeDeal\User;
 use Validator;
 use Socialite;
-use App\Http\Controllers\Controller;
+use CakeDeal\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

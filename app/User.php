@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace CakeDeal;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -28,12 +28,12 @@ class User extends Authenticatable
 
     public function orders()
     {
-        return $this->hasMany('App\Order');
+        return $this->hasMany('CakeDeal\Order');
     }
 
     public function products()
     {
-        return $this->hasMany('App\Product');
+        return $this->hasMany('CakeDeal\Product');
     }
 
     /**
