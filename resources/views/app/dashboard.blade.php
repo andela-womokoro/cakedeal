@@ -73,6 +73,9 @@
                         <input type="text" class="form-control" placeholder="Quantity" name="quantity" value=""  maxlength="5" required style="width:100px;">
                     </div>
                     <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Delivery Date" name="delivery_date" value=""  maxlength="5" required>
+                    </div>
+                    <div class="form-group">
                     	<textarea rows="50" cols="" class="form-control" placeholder="Message (Optional)" name="message" value=""  maxlength="255"></textarea>
                     </div>
                     <button type="submit" class="btn btn-default">Place Order</button>
