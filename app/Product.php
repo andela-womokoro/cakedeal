@@ -2,6 +2,7 @@
 
 namespace CakeDeal;
 
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -23,5 +24,17 @@ class Product extends Model
     public function productCategory()
     {
         return $this->belongsTo('CakeDeal\ProductCategory');
+    }
+
+    /**
+     * Set scope for personal cakes.
+     *
+     * @param  string
+     *
+     * @return string
+     */
+    public function scopePersonal($query)
+    {
+        return $query->where('user_id', Auth::user()->id);
     }
 }
