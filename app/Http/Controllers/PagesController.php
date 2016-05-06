@@ -8,7 +8,6 @@ use CakeDeal\Order;
 use CakeDeal\Product;
 use CakeDeal\Http\Requests;
 use Illuminate\Http\Request;
-use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
