@@ -21,8 +21,9 @@
             </div>
         </div>
         @endforeach
-        @else
-            <h3>No cakes yet!</h3>
+        @endif
+        @if( $cakes->isEmpty() )
+            <h3>No Course uploaded yet!</h3>
         @endif
     </div>
     <div class="row">
