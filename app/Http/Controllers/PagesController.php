@@ -2,15 +2,17 @@
 
 namespace CakeDeal\Http\Controllers;
 
+use CakeDeal\Product;
 use Illuminate\Http\Request;
-
 use CakeDeal\Http\Requests;
 
 class PagesController extends Controller
 {
     public function index()
     {
-        return view('landing');
+        $cakes = Product::all()->take(3);
+
+        return view('landing', compact('cakes'));
     }
 
     public function dashboard()
