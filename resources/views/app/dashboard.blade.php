@@ -8,7 +8,7 @@
         <div class="col-sm-12">
             <table class="table table-hover table1">
             	<tr>
-            		<th colspan="7"><h2>Pending Customer Orders</h2></th>
+            		<th colspan="8"><h2>Pending Customer Orders</h2></th>
             	</tr>
             	<tr>
             		<th></th>
@@ -30,10 +30,10 @@
             		<td><br /></td>
             		<td><br /></td>
                     <td>
-                        <div class="form-container" style="margin-bottom:0px;">
+                        <div class="form-container" style="margin:0px;">
                             <form method="post" action="/order/view">
                                 {{ csrf_field() }}
-                                <input type="hidden" name="order_id" value="{{ '3' }}" />
+                                <input type="hidden" name="order_id" value="{{ $i }}" />
                                 <button type="submit" class="btn btn-default">View</button>
                             </form>
                         </div>
@@ -48,7 +48,7 @@
         <div class="col-sm-12">
             <table class="table table-hover table1">
             	<tr>
-            		<th colspan="5"><h2>My Orders</h2></th>
+            		<th colspan="8"><h2>My Orders</h2></th>
             	</tr>
             	<tr>
             		<th></th>

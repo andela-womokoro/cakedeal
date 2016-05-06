@@ -24,7 +24,8 @@ class PagesController extends Controller
 
     public function viewOrder(Request $request)
     {
-    	$request->input('order_id');
+    	// $orderId = $request->input('order_id');
+    	// dd($request->input('order_id'));
 
         return view('order_details');
     }
