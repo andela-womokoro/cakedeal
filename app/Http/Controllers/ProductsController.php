@@ -23,7 +23,9 @@ class ProductsController extends Controller
 
     public function getProducts()
     {
-        return view('app.order');
+        $cakes = Product::all();
+
+        return view('app.order', compact('cakes'));
     }
 
     /**

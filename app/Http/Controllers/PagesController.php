@@ -17,8 +17,10 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-        $cakes = Product::all();
+        $cakes = Product::personal()->get();;
 
         return view('app.dashboard', compact('cakes'));
     }
+
+
 }
