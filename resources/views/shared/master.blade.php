@@ -35,11 +35,7 @@
         <div class="container">
            <div class="row">
                 <div class="col-md-3">
-                    @if (Auth::check())
-                    <a href="/dashboard">
-                    @else
                     <a href="/">
-                    @endif
                         <span class="title-left"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp;CAKE</span>
                         <span class="title-right">DEAL</span>
                     </a>

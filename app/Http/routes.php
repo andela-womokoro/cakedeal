@@ -29,7 +29,8 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::post('/profile/update', 'UsersController@updateProfile');
 	Route::get('/product', 'ProductsController@getProducts');
 	Route::get('/product/upload', 'ProductsController@uploadProduct');
-	Route::get('/product/add', 'ProductsController@addProduct');
+    Route::post('/product', 'ProductsController@store');
+	//Route::get('/product/add', 'ProductsController@addProduct');
 });
 
 Route::auth();
