@@ -6,6 +6,7 @@
 <div class="container">
     <div class="row">
         <h2>My Cakes</h2>
+        @if($cakes)
         @foreach($cakes as $cake)
         <div class="col-md-4 featured shadow1 centered-heading">
             <img src="{{ $cake->image_url }}" class="img-responsive photo" border="0" />
@@ -20,6 +21,9 @@
             </div>
         </div>
         @endforeach
+        @else
+            <h3>No cakes yet!</h3>
+        @endif
     </div>
     <div class="row">
         <div class="col-sm-12">
