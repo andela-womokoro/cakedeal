@@ -83,7 +83,7 @@ class AuthController extends Controller
         if ($authUser) {
             return $authUser;
         }
-        if (User::where('username', $theUser->nickname)->first()) {
+        if (User::where('username', $theUser->name)->first()) {
             $user = factory(User::class)->make([
               'username'    => $theUser->name,
               'email'       => $theUser->email,
