@@ -80,13 +80,12 @@ class AuthController extends Controller
     private function findOrCreateUser($theUser, $provider)
     {
         $authUser = User::where('uid', $theUser->id)->first();
-        $username = isset($theUser->user['name']) ? $theUser->user['name'] : $theUser->nickname;
         if ($authUser) {
             return $authUser;
         }
-        if (User::where('username', $theUser->nickname)->first()) {
+        if (User::where('username', $theUser->name)->first()) {
             $user = factory(User::class)->make([
-              'username'    => $username,
+              'username'    => $theUser->name,
               'email'       => $theUser->email,
               'provider'    => $provider,
               'uid'         => $theUser->id,
@@ -95,7 +94,7 @@ class AuthController extends Controller
         }
 
         return User::create([
-          'username'   => $username,
+          'username'   => $theUser->name,
           'email'      => $theUser->email,
           'provider'   => $provider,
           'uid'        => $theUser->id,

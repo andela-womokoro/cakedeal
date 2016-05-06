@@ -48,7 +48,14 @@
                 @if( ! Auth::check() )
                     <a href="" data-toggle="modal" data-target="#LoginModal"><i class="fa fa-sign-in" aria-hidden="true"></i></i>&nbsp;Login</a>
                 @else
-                    <a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log Out</a>
+                <div class="dropdown">
+                    <a class="btn btn-primary dropdown-toggle dec" type="button" data-toggle="dropdown"><img class="avatar1" src="{{ Auth::user()->getAvatar() }}" >
+                      {{ Auth::user()->username }}
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log Out</a></li>
+                  </ul>
+                </div>
                 @endif
                 </div>
             </div>
@@ -57,7 +64,7 @@
     <nav class="navbar bottom-navbar">
         <div class="container">
            <div class="row">
-                <div class="col-md-12"> 
+                <div class="col-md-12">
                     @if (Auth::check())
                         <a href="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Dashboard</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/product/upload"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Sell Cakes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
