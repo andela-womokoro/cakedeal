@@ -20,19 +20,19 @@
             	<h2>Update Your Profile</h2>
                 <form method="post" action="/profile/update">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Username" name="username" value="" maxlength="10" minlength="3" required>
+                        <input type="text" class="form-control" placeholder="Username" name="username" value="{{ $user->username }}" maxlength="10" minlength="3" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email Address" name="email" value=""  maxlength="255" required>
+                        <input type="email" class="form-control" placeholder="Email Address" name="email" value="{{ $user->email }}"  maxlength="255" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Phone Number" name="phone" value=""  maxlength="20" required>
+                        <input type="email" class="form-control" placeholder="Phone Number" name="phone" value="{{ $user->phone }}"  maxlength="20" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="First Name" name="first_name" value=""  maxlength="45" required>
+                        <input type="text" class="form-control" placeholder="First Name" name="first_name" value="{{ $user->first_name }}"  maxlength="45" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Last Name" name="last_name" value=""  maxlength="45" required>
+                        <input type="text" class="form-control" placeholder="Last Name" name="last_name" value="{{ $user->last_name }}"  maxlength="45" required>
                     </div>
                     <button type="submit" class="btn btn-default">Save Changes</button>
                 </form>
