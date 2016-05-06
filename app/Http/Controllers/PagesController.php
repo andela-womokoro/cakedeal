@@ -17,6 +17,7 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-        return view('app.dashboard');
+        $cakes = Product::all();
+        return view('app.dashboard', compact('cakes'));
     }
 }
