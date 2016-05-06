@@ -48,11 +48,11 @@
                 @if( ! Auth::check() )
                     <a href="" data-toggle="modal" data-target="#LoginModal"><i class="fa fa-sign-in" aria-hidden="true"></i></i>&nbsp;Login</a>
                 @else
-                <div class="dropdown">
-                    <a class="btn btn-primary dropdown-toggle dec" type="button" data-toggle="dropdown"><img class="avatar1" src="{{ Auth::user()->getAvatar() }}" >
+                <div class="dropdown avatar">
+                    <a class="btn dropdown-toggle dec" type="button" data-toggle="dropdown"><img class="avatar1" src="{{ Auth::user()->getAvatar() }}" >
                       {{ Auth::user()->username }}
                   <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
+                  <ul class="dropdown-menu pull-right">
                       <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>Log Out</a></li>
                   </ul>
                 </div>

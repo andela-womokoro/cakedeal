@@ -229,3 +229,17 @@ input, select, textarea {
     font-weight: 300;
     margin-bottom: 30px;
 }
+
+.dec {
+    text-transform: capitalize;
+}
+
+.avatar .btn {
+  height: 50px;
+}
+
+.avatar1 {
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+}
