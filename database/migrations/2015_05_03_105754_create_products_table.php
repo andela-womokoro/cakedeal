@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('name', 45)->nullable();;
             $table->string('description', 255)->nullable();
-            $table->decimal('price', 5, 2)->nullable();
+            $table->decimal('price', 8, 2)->nullable();
             $table->string('image_url')->nullable();
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('product_categories')->onDelete('cascade')->onUpdate('cascade');

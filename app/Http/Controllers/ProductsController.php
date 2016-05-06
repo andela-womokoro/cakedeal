@@ -14,7 +14,7 @@ class ProductsController extends Controller
     public function uploadProduct()
     {
         $categories = ProductCategory::all();
-        return view('product_upload')->withProductCategory($categories);
+        return view('product_upload',compact('categories'));
     }
 
     public function addProduct()
