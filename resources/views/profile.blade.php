@@ -4,6 +4,15 @@
 @section('content')
 
 <div class="container">
+    @if(isset($message))
+        <div class="row">
+            <div class="col-md-12"> 
+                <div class="alert alert-info" role="alert">
+                    {{ $message }}
+                </div>  
+            </div>
+        </div>
+    @endif
     <div class="row">
         <div class="col-md-12">
         	<!-- Profile update form -->

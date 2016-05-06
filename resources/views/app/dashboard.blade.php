@@ -5,17 +5,19 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12">
             <table class="table table-hover table1">
             	<tr>
-            		<th colspan="5"><h2>Pending Customer Orders</h2></th>
+            		<th colspan="7"><h2>Pending Customer Orders</h2></th>
             	</tr>
             	<tr>
             		<th></th>
             		<th>Customer</th>
             		<th>Product</th>
             		<th>Quantity</th>
+            		<th>Order Status</th>
             		<th>Order Date</th>
+            		<th>Delivery Date</th>
             	</tr>
             	@for($i = 1; $i < 6; $i++)
             	<tr>
@@ -24,17 +26,16 @@
             		<td><br /></td>
             		<td><br /></td>
             		<td><br /></td>
+            		<td><br /></td>
+            		<td><br /></td>
             	</tr>
             	@endfor
             </table>
         </div>
-        <div class="col-md-10">
-            <br />
-        </div>
     </div>
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12">
             <table class="table table-hover table1">
             	<tr>
             		<th colspan="5"><h2>My Orders</h2></th>
@@ -45,6 +46,7 @@
             		<th>Product</th>
             		<th>Quantity</th>
             		<th>Order Date</th>
+            		<th>Delivery Date</th>
             	</tr>
             	@for($i = 1; $i < 6; $i++)
             	<tr>
@@ -53,12 +55,10 @@
             		<td><br /></td>
             		<td><br /></td>
             		<td><br /></td>
+            		<td><br /></td>
             	</tr>
             	@endfor
             </table>
-        </div>
-        <div class="col-md-10">
-            <br />
         </div>
     </div>
 
