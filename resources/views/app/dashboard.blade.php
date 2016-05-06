@@ -12,12 +12,13 @@
             	</tr>
             	<tr>
             		<th></th>
-            		<th>Customer</th>
-            		<th>Product</th>
-            		<th>Quantity</th>
-            		<th>Order Status</th>
-            		<th>Order Date</th>
-            		<th>Delivery Date</th>
+            		<th align="left">Customer</th>
+            		<th align="left">Product</th>
+            		<th align="left">Quantity</th>
+            		<th align="left">Order Status</th>
+            		<th align="left">Order Date</th>
+            		<th align="left">Delivery Date</th>
+                    <th align="right"></th>
             	</tr>
             	@for($i = 1; $i < 6; $i++)
             	<tr>
@@ -28,6 +29,15 @@
             		<td><br /></td>
             		<td><br /></td>
             		<td><br /></td>
+                    <td>
+                        <div class="form-container" style="margin-bottom:0px;">
+                            <form method="post" action="/order/view">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="order_id" value="{{ '3' }}" />
+                                <button type="submit" class="btn btn-default">View</button>
+                            </form>
+                        </div>
+                    </td>
             	</tr>
             	@endfor
             </table>
@@ -42,11 +52,12 @@
             	</tr>
             	<tr>
             		<th></th>
-            		<th>Dealer</th>
-            		<th>Product</th>
-            		<th>Quantity</th>
-            		<th>Order Date</th>
-            		<th>Delivery Date</th>
+            		<th align="left">Dealer</th>
+            		<th align="left">Product</th>
+            		<th align="left">Quantity</th>
+                    <th align="left">Order Status</th>
+            		<th align="left">Order Date</th>
+            		<th align="left">Delivery Date</th>
             	</tr>
             	@for($i = 1; $i < 6; $i++)
             	<tr>
@@ -56,6 +67,7 @@
             		<td><br /></td>
             		<td><br /></td>
             		<td><br /></td>
+                    <td><br /></td>
             	</tr>
             	@endfor
             </table>

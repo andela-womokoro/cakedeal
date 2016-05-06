@@ -27,7 +27,7 @@
                         <input type="email" class="form-control" placeholder="Email Address" name="email" value="{{ $user->email }}"  maxlength="255" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" class="form-control" placeholder="Phone Number" name="phone" value="{{ $user->phone }}"  maxlength="20" required>
+                        <input type="tel" class="form-control" placeholder="Phone Number" name="phone" value="{{ $user->phone_no }}"  maxlength="20" required>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="First Name" name="first_name" value="{{ $user->first_name }}"  maxlength="45" required>
