@@ -11,9 +11,10 @@ class User extends Authenticatable
      *
      * @var array
      */
-    
+
     protected $fillable = [
-        'username', 'email', 'password', 'phone_no', 'first_name', 'last_name', 'sex', 'avatar_url', 'provider'
+        'username', 'email', 'password', 'phone_no', 'first_name', 'last_name', 'sex', 'avatar_url', 'provider',
+        'uid'
     ];
 
     /**
@@ -33,5 +34,25 @@ class User extends Authenticatable
     public function products()
     {
         return $this->hasMany('App\Product');
+    }
+
+    /**
+     * Get the avatar from gravatar.
+     *
+     * @return string
+     */
+    private function getAvatarFromGravatar()
+    {
+        return 'http://www.gravatar.com/avatar/'.md5(strtolower(trim($this->email))).'?d=mm&s=500';
+    }
+
+    /**
+     * Get avatar from the model.
+     *
+     * @return string
+     */
+    public function getAvatar()
+    {
+        return (! is_null($this->avatar_url)) ? $this->avatar_url : $this->getAvatarFromGravatar();
     }
 }
