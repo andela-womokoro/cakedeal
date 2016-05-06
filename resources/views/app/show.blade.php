@@ -9,7 +9,7 @@
         <!-- Cake order form -->
         <div class="form-container">
           <h2>Make a Cake Order</h2>
-            <form method="post" action="/profile/update">
+            <form method="post" action="/make-order">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Quantity" name="quantity" value=""  maxlength="5" required style="width:100px;">
                 </div>
