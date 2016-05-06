@@ -21,9 +21,9 @@ class ProductsController extends Controller
         return view('product_upload', compact('categories'));
     }
 
-    public function addProduct()
+    public function getProducts()
     {
-        return view('sell');
+        return view('app.order');
     }
 
     /**
