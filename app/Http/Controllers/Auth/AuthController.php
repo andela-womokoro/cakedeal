@@ -80,7 +80,7 @@ class AuthController extends Controller
     private function findOrCreateUser($theUser, $provider)
     {
         $authUser = User::where('uid', $theUser->id)->first();
-        $username = isset($theUser->user['first_name']) ? $theUser->user['first_name'] : $theUser->nickname;
+        $username = isset($theUser->user['name']) ? $theUser->user['name'] : $theUser->nickname;
         if ($authUser) {
             return $authUser;
         }
