@@ -3,10 +3,6 @@
 
 @section('content')
 
-<?php
-    var_dump($user);
-?>
-
 <div class="container">
     @if(isset($message))
         <div class="row">
