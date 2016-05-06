@@ -15,7 +15,7 @@
                 {{ $cake->name }}<br />
                 <div class="form-container centered-heading" style="padding:0px; margin:5px;">
                     <form method="post">
-                        <button type="button" class="btn btn-default center" data-toggle="modal" data-target="#LoginModal">Order Now</button>
+                        <a href="/product/{{ $cake->id }}" type="button" class="btn btn-default center">Order Now</a>
                     </form>
                 </div>
             </div>

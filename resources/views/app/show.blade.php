@@ -17,7 +17,7 @@
                   <textarea rows="50" cols="" class="form-control" placeholder="Message (Optional)" name="message" value=""  maxlength="255"></textarea>
                 </div>
                 <div class="form-group">
-                    <input type="date" name="delivery-date" class="form-control">
+                    <input type="date" name="delivery-date" class="form-control" required placeholder="Enter delivery date">
                 </div>
                 <button type="submit" class="btn btn-default">Place Order</button>
             </form>
