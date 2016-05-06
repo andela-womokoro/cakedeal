@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace CakeDeal\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use CakeDeal\Http\Requests;
 
 class PagesController extends Controller
 {

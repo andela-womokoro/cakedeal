@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace CakeDeal\Http\Controllers;
 
+use Auth;
+use Alert;
+use Cloudder;
+use CakeDeal\Http\Requests;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 
 class ProductsController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace CakeDeal;
 
 use Illuminate\Database\Eloquent\Model;
 

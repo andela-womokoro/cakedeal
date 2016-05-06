@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace CakeDeal\Jobs;
 
 use Illuminate\Bus\Queueable;
 
