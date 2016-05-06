@@ -20,7 +20,6 @@ class CreateProductsTable extends Migration
             $table->string('description', 255)->nullable();
             $table->decimal('price', 5, 2)->nullable();
             $table->string('image_url')->nullable();
-            $table->rememberToken();
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('product_categories')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
