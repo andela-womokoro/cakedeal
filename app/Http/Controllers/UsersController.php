@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace CakeDeal\Http\Controllers;
 
 use Auth;
-use App\User;
-use App\Http\Requests;
+use CakeDeal\User;
+use CakeDeal\Http\Requests;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller

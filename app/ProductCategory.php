@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace CakeDeal;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,6 +22,6 @@ class ProductCategory extends Model
 
     public function products()
     {
-        return $this->hasMany('App\Product');
+        return $this->hasMany('CakeDeal\Product');
     }
 }

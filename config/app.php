@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        CakeDeal\Providers\AppServiceProvider::class,
+        CakeDeal\Providers\AuthServiceProvider::class,
+        CakeDeal\Providers\EventServiceProvider::class,
+        CakeDeal\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         JD\Cloudder\CloudderServiceProvider::class,
