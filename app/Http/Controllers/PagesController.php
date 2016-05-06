@@ -10,7 +10,7 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $cakes = Product::all();
+        $cakes = Product::all()->take(3);
 
         return view('landing', compact('cakes'));
     }
