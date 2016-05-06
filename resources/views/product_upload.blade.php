@@ -17,10 +17,10 @@
 	                    	<textarea rows="50" cols="" class="form-control" placeholder="Description (Optional)" name="description" value=""  maxlength="255"></textarea>
 	                    </div>
 	                    <div class="form-group">
-											  <select class="form-control" placeholder="Select Cake Category" id="sel1">
+											  <select class="form-control" placeholder="Select Cake Category" id="sel1" style="background: #F0F0E9">
 											  @foreach($categories as $category)
 											    <option value="{{$category->id}}">{{$category->category}}</option>
-											   @endforech
+											   @endforeach
 											  </select>
 											</div>
 	                    <div class="form-group">
