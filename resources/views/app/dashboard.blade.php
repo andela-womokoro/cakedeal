@@ -59,17 +59,17 @@
             		<th align="left">Order Date</th>
             		<th align="left">Delivery Date</th>
             	</tr>
-            	@for($i = 1; $i < 6; $i++)
-            	<tr>
-            		<td>{{ $i.'.' }}</td>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-                    <td><br /></td>
-            	</tr>
-            	@endfor
+            	@foreach ($userOrders as $order)
+                	<tr>
+                		<td><br /></td>
+                		<td><br /></td>
+                		<td><br /></td>
+                		<td>{{ $order->quantity }}</td>
+                		<td><br /></td>
+                		<td>{{ $order->created_at }}</td>
+                        <td><br /></td>
+                	</tr>
+            	@endforeach
             </table>
         </div>
     </div>

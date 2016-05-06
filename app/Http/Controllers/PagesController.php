@@ -2,9 +2,11 @@
 
 namespace CakeDeal\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Auth;
+use CakeDeal\User;
+use CakeDeal\Order;
 use CakeDeal\Http\Requests;
+use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
@@ -15,11 +17,9 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-    	// $user = User::find(Auth::user()->id);
+    	$userOrders = User::find(Auth::user()->id)->orders;
 
-        // return view('profile', ['user' => $user]);
-
-        return view('app.dashboard');
+        return view('app.dashboard', ['userOrders' => $userOrders]);
     }
 
     public function viewOrder(Request $request)
