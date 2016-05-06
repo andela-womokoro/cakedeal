@@ -12,7 +12,6 @@ class OrderController extends Controller
 {
     public function index($id)
     {
-        dd($id);
         $order = Product::where('id', $id)->first();
 
         return view('app.show', compact('order'));
