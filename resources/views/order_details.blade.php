@@ -3,6 +3,7 @@
 
 @section('content')
 
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -20,7 +21,7 @@
             		<td>Product Ordered</td><td align="right"></td>
             	</tr>
             	<tr>
-            		<td>Quantity</td><td align="right"></td>
+            		<td>Quantity</td><td align="right">{{ $order->quantity }}</td>
             	</tr>
             	<tr>
             		<td>Order Status</td><td align="right"></td>

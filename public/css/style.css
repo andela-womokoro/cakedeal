@@ -105,6 +105,7 @@
 	overflow: hidden;
 	margin:10px;
 	padding: 0px;
+	float: left;
 }
 
 .featured:hover {
@@ -128,6 +129,7 @@
 
 .footer-top {
 	background-color: #f0f0e9;
+	margin-top: 70px;
 	margin-bottom: 0px;
 	font-size:12px;
 }
@@ -221,7 +223,7 @@ input, select, textarea {
     padding: 6px 25px;
 }
 
-.form-container h2, .table1 h2 {
+.form-container h2, .table1 h2, .heading2 {
     color: #696763;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;

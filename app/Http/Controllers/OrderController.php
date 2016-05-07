@@ -30,4 +30,11 @@ class OrderController extends Controller
 
         return redirect()->to('/dashboard');
     }
+
+    public function viewOrder($id) 
+    {
+        $order = Order::find($id);
+
+        return view('order_details', ['order' => $order]);
+    }
 }
