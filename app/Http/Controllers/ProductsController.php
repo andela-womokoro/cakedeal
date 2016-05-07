@@ -7,6 +7,7 @@ use Alert;
 use Redirect;
 use Cloudder;
 use Validator;
+use CakeDeal\User;
 use CakeDeal\Product;
 use CakeDeal\Http\Requests;
 use Illuminate\Http\Request;
@@ -64,7 +65,12 @@ class ProductsController extends Controller
         $cake->save();
 
         return redirect()->to('/dashboard')->with('info', 'Your Project has been created successfully');
+    }
 
+    public function userProducts()
+    {
+        $products = User::find(Auth::user()->id)->products;
 
+        return view('user_products', ['products' => $products]);
     }
 }

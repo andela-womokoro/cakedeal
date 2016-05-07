@@ -70,8 +70,8 @@
                         <div class="row centered-heading"><h4>&#8358; {{ $cake->price }}</h4></div>
                         {{ $cake->name }}<br />
                         <div class="form-container" style="padding:0px; margin:5px;">
-                            <form method="post">
-                                <a href="/product/{{ $cake->id }}"class="btn btn-default">Order Now</a>
+                            <form method="link" action="/product/{{ $cake->id }}">
+                                <button type="submit" class="btn btn-default">Order Now</button>
                             </form>
                         </div>
                     </div>

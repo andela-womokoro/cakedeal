@@ -26,6 +26,4 @@ class PagesController extends Controller
 
         return view('app.dashboard', compact('cakes', 'order'));
     }
-
-
 }
