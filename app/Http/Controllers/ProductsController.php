@@ -21,9 +21,11 @@ class ProductsController extends Controller
         return view('product_upload', compact('categories'));
     }
 
-    public function addProduct()
+    public function getProducts()
     {
-        return view('sell');
+        $cakes = Product::all();
+
+        return view('app.order', compact('cakes'));
     }
 
     /**

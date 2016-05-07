@@ -71,7 +71,7 @@
                         {{ $cake->name }}<br />
                         <div class="form-container" style="padding:0px; margin:5px;">
                             <form method="post">
-                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#LoginModal">Order Now</button>
+                                <a href="/product/{{ $cake->id }}"class="btn btn-default">Order Now</a>
                             </form>
                         </div>
                     </div>

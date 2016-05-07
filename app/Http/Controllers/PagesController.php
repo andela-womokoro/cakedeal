@@ -20,19 +20,12 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-    	$userOrders = User::find(Auth::user()->id)->orders;
+        $order = Order::personal()->get();
 
-        return view('app.dashboard', ['userOrders' => $userOrders]);
+        $cakes = Product::personal()->get();
+
+        return view('app.dashboard', compact('cakes', 'order'));
     }
 
-    public function viewOrder(Request $request)
-    {
-    	// $orderId = $request->input('order_id');
-    	// dd($request->input('order_id'));
 
-        // return view('order_details');
-
-        $cakes = Product::all();
-        return view('app.dashboard', compact('cakes'));
-    }
 }
