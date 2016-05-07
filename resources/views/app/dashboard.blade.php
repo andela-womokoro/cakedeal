@@ -30,16 +30,17 @@
         <div class="col-sm-12">
             <table class="table table-hover table1">
             	<tr>
-            		<th colspan="7"><h2>Pending Customer Orders</h2></th>
+            		<th colspan="8"><h2>Pending Customer Orders</h2></th>
             	</tr>
             	<tr>
             		<th></th>
-            		<th>Customer</th>
-            		<th>Product</th>
-            		<th>Quantity</th>
-            		<th>Order Status</th>
-            		<th>Order Date</th>
-            		<th>Delivery Date</th>
+            		<th align="left">Customer</th>
+            		<th align="left">Product</th>
+            		<th align="left">Quantity</th>
+            		<th align="left">Order Status</th>
+            		<th align="left">Order Date</th>
+            		<th align="left">Delivery Date</th>
+                    <th align="right"></th>
             	</tr>
             	@for($i = 1; $i < 6; $i++)
             	<tr>
@@ -50,6 +51,15 @@
             		<td><br /></td>
             		<td><br /></td>
             		<td><br /></td>
+                    <td>
+                        <div class="form-container" style="margin:0px;">
+                            <form method="post" action="/order/view">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="order_id" value="{{ $i }}" />
+                                <button type="submit" class="btn btn-default">View</button>
+                            </form>
+                        </div>
+                    </td>
             	</tr>
             	@endfor
             </table>
@@ -60,30 +70,31 @@
         <div class="col-sm-12">
             <table class="table table-hover table1">
             	<tr>
-            		<th colspan="5"><h2>My Orders</h2></th>
+            		<th colspan="8"><h2>My Orders</h2></th>
             	</tr>
             	<tr>
             		<th></th>
-            		<th>Dealer</th>
-            		<th>Product</th>
-            		<th>Quantity</th>
-            		<th>Order Date</th>
-            		<th>Delivery Date</th>
+            		<th align="left">Dealer</th>
+            		<th align="left">Product</th>
+            		<th align="left">Quantity</th>
+                    <th align="left">Order Status</th>
+            		<th align="left">Order Date</th>
+            		<th align="left">Delivery Date</th>
             	</tr>
-            	@for($i = 1; $i < 6; $i++)
-            	<tr>
-            		<td>{{ $i.'.' }}</td>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-            	</tr>
-            	@endfor
+            	@foreach ($userOrders as $order)
+                	<tr>
+                		<td><br /></td>
+                		<td><br /></td>
+                		<td><br /></td>
+                		<td>{{ $order->quantity }}</td>
+                		<td><br /></td>
+                		<td>{{ $order->created_at }}</td>
+                        <td><br /></td>
+                	</tr>
+            	@endforeach
             </table>
         </div>
     </div>
-
 </div>
 
 @endsection

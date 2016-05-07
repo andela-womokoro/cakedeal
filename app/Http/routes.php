@@ -24,8 +24,9 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 Route::group(['middleware' => ['auth']], function () {
 	// Protected routes using 'auth' middleware
 	Route::get('/dashboard', 'PagesController@dashboard');
+	Route::post('/order/view', 'PagesController@viewOrder');
 	Route::get('/profile', 'UsersController@profile');
-	Route::get('/profile/update', 'UsersController@updateProfile');
+	Route::post('/profile/update', 'UsersController@updateProfile');
 	Route::get('/product', 'ProductsController@getProducts');
 	Route::get('/product/upload', 'ProductsController@uploadProduct');
   Route::post('/product/new', 'ProductsController@store');

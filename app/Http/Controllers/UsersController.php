@@ -21,11 +21,11 @@ class UsersController extends Controller
         $user = User::find(Auth::user()->id);
         $user->username = $request->input('username');
         $user->email = $request->input('email');
-        $user->phone = $request->input('phone');
+        $user->phone_no = $request->input('phone');
         $user->first_name = $request->input('first_name');
         $user->last_name = $request->input('last_name');
         $user->save();
 
-        return view('profile', ['user' => $user, 'message' => 'You have successfully updated your profile.']);
+        return view('profile', ['user' => $user, 'message' => 'Your profile has been successfully updated.']);
     }
 }
