@@ -2,6 +2,7 @@
 
 namespace CakeDeal\Http\Controllers;
 
+use CakeDeal\Order;
 use CakeDeal\Product;
 use Illuminate\Http\Request;
 use CakeDeal\Http\Requests;
@@ -17,9 +18,12 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-        $cakes = Product::personal()->get();;
+        $order = Order::personal()->get();
 
-        return view('app.dashboard', compact('cakes'));
+        $cakes = Product::personal()->get();
+
+
+        return view('app.dashboard', compact('cakes', 'order'));
     }
 
 

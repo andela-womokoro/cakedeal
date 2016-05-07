@@ -19,9 +19,9 @@ class OrderController extends Controller
 
     public function store(Request $request, $id)
     {
-        $order = Order();
+        $order = new Order();
         $order->user_id = Auth::user()->id;
-        $order->product_id = $id->id;
+        $order->product_id = Product::find($id)->first()->id;
         $order->quantity = $request->input('quantity');
         $order->message = $request->input('message');
         $order->delivery_date = $request->input('delivery-date');
