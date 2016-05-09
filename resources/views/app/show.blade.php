@@ -17,7 +17,8 @@
                   <textarea rows="50" cols="" class="form-control" placeholder="Message (Optional)" name="message" value=""  maxlength="255"></textarea>
                 </div>
                 <div class="form-group">
-                    <input type="date" name="delivery-date" class="form-control" required placeholder="Enter delivery date">
+                    <label>Delivery Date</label>
+                    <input type="date" name="delivery-date" class="form-control" required >
                 </div>
                 <button type="submit" class="btn btn-default">Place Order</button>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
