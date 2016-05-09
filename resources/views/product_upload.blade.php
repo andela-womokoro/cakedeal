@@ -17,12 +17,12 @@
 	                    	<textarea rows="50" cols="" class="form-control" placeholder="Description (Optional)" name="description" value=""  minlength="15" maxlength="255"></textarea>
 	                    </div>
 	                    <div class="form-group">
-											  <select class="form-control" placeholder="Select Cake Category" name="category"  style="background: #F0F0E9">
-											  @foreach($categories as $category)
-											    <option value="{{$category->id}}">{{$category->category}}</option>
-											   @endforeach
-											  </select>
-											</div>
+						  	<select class="form-control" placeholder="Cake Category" name="category" style="background: #F0F0E9; width: 170px;">
+							  	@foreach($categories as $category)
+									<option value="{{$category->id}}">{{$category->category}} Cake</option>
+							   	@endforeach
+							</select>
+						</div>
 	                    <div class="form-group">
 	                        <input type="text" class="form-control" placeholder="Price (e.g. 1200.95)" name="price" value=""  maxlength="6" required style="width:150px;">
 	                    </div>
