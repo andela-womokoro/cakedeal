@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/product/edit/{id}', 'OrderController@editProduct');
 	Route::get('/product/delete/{id}', 'OrderController@deleteProduct');
 	Route::post('/make-order/{id}', 'OrderController@store');
+	Route::get('/product/{id}', 'OrderController@index');
 });
 
 Route::auth();
