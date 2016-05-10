@@ -38,9 +38,7 @@
                             <td>{{ $order->delivery_date }}</td>
                             <td>
                                 <div class="form-container" style="margin:0px;">
-                                    <form method="link" action="/order/view/1">
-                                        {{ csrf_field() }}
-                                        <input type="hidden" name="order_id" value="" />
+                                    <form method="link" action="/order/view/{{ $order->id }}">
                                         <button type="submit" class="btn btn-default">View</button>
                                     </form>
                                 </div>

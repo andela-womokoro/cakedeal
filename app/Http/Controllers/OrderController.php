@@ -37,4 +37,19 @@ class OrderController extends Controller
 
         return view('order_details', ['order' => $order]);
     }
+
+    public function changeOrderStatus(Request $request)
+    {
+        $id = $request->input('id');
+        $newState = $request->input('new_state');
+
+        $order = Order::find($id);
+        // $order->status = $newState;
+        // $order->save();
+
+        return view('order_details', [
+                        'order' => $order, 
+                        'message' => 'You have accepted this order. Order status has been updated to \".$newState.\"'
+                        ]);
+    }
 }
