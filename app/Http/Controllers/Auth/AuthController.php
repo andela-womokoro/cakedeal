@@ -79,27 +79,24 @@ class AuthController extends Controller
      */
     private function findOrCreateUser($theUser, $provider)
     {
-        $authUser = User::where('uid', $theUser->id)->first();
-        if ($authUser) {
-            return $authUser;
-        }
-        if (User::where('username', $theUser->name)->first()) {
-            $user = factory(User::class)->make([
-              'username'    => $theUser->name,
-              'email'       => $theUser->email,
-              'provider'    => $provider,
-              'uid'         => $theUser->id,
-              'avatar_url'  => $theUser->avatar,
-          ]);
+        $checkUser = User::where('uid', $theUser->id)->first();
+        if (is_null($checkUser)) {
+            $checkUser = User::create([
+                  'username'    => $theUser->name,
+                  'email'       => $theUser->email,
+                  'provider'    => $provider,
+                  'uid'         => $theUser->id,
+                  'avatar_url'  => $theUser->avatar,
+              ]);
+
+        Auth::login($checkUser);
+
+            return redirect('/profile');
         }
 
-        return User::create([
-          'username'   => $theUser->name,
-          'email'      => $theUser->email,
-          'provider'   => $provider,
-          'uid'        => $theUser->id,
-          'avatar_url' => $theUser->avatar,
-      ]);
+        Auth::login($checkUser);
+
+        return redirect($this->redirectTo);
     }
 
     /**
@@ -120,10 +117,9 @@ class AuthController extends Controller
         } catch (Exception $e) {
             return Redirect::to('auth/'.$provider);
         }
-        $authUser = $this->findOrCreateUser($user, $provider);
-        Auth::loginUsingId($authUser->id, true);
 
-        return Redirect::to($this->redirectTo);
+        return $this->findOrCreateUser($user, $provider);
+
     }
 
     /**
