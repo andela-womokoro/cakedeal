@@ -2,10 +2,12 @@
 
 namespace CakeDeal\Http\Controllers;
 
+use Auth;
+use CakeDeal\User;
 use CakeDeal\Order;
 use CakeDeal\Product;
-use Illuminate\Http\Request;
 use CakeDeal\Http\Requests;
+use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
@@ -22,9 +24,6 @@ class PagesController extends Controller
 
         $cakes = Product::personal()->get();
 
-
         return view('app.dashboard', compact('cakes', 'order'));
     }
-
-
 }

@@ -24,13 +24,17 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 Route::group(['middleware' => ['auth']], function () {
 	// Protected routes using 'auth' middleware
 	Route::get('/dashboard', 'PagesController@dashboard');
+	Route::get('/order/view/{id}', 'OrderController@viewOrder');
 	Route::get('/profile', 'UsersController@profile');
-	Route::get('/profile/update', 'UsersController@updateProfile');
-	Route::get('/product', 'ProductsController@getProducts');
+	Route::post('/profile/update', 'UsersController@updateProfile');
+	Route::get('/products', 'ProductsController@getProducts');
+	Route::get('/products/uploaded', 'ProductsController@userProducts');
 	Route::get('/product/upload', 'ProductsController@uploadProduct');
-  Route::post('/product/new', 'ProductsController@store');
-  Route::get('/product/{id}', 'OrderController@index');
-  Route::post('/make-order/{id}', 'OrderController@store');
+	Route::post('/product/new', 'ProductsController@store');
+	Route::get('/product/edit/{id}', 'OrderController@editProduct');
+	Route::get('/product/delete/{id}', 'OrderController@deleteProduct');
+	Route::post('/make-order/{id}', 'OrderController@store');
+	Route::get('/product/{id}', 'OrderController@index');
 });
 
 Route::auth();

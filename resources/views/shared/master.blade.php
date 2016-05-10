@@ -63,22 +63,15 @@
                 <div class="col-md-12">
                     @if (Auth::check())
                         <a href="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Dashboard</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/products/uploaded"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;My Products</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/product/upload"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Sell Cakes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/product"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Order Cake</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/products"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Order Cake</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/profile"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     @else
                         <a href="">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="">Our range</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        <!-- Temp links -->
-                        <!--
-                        <a href="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;Dashboard</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/product/upload"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Sell Cakes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/product"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Order Cake</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="/profile"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        -->
                     @endif
                 </div>
             </div>
@@ -118,7 +111,6 @@
     <!-- Footer -->
     <nav class="navbar navbar-default footer-top">
         <div class="container">
-           @if (! Auth::check())
                <div class="row" style="padding-top: 25px; padding-bottom: 50px; border-bottom:1px ridge #ddd;">
                     <div class="col-md-2">
                         <span class="title-left">CAKE</span>
@@ -142,7 +134,6 @@
                     @endfor
                     <div class="col-md-2"></div>
                 </div>
-            @endif
             <div class="row">
                 <div class="col-md-12" style="padding: 25px; text-align: center; font-size:12px;">
                     <a href="">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
