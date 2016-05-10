@@ -3,6 +3,12 @@
 
 @section('content')
 
+<?php
+    $myOrdersCounter = 1;
+    $customerOrdersCounter = 1;
+?>
+
+
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -57,15 +63,17 @@
             		<th align="left">Order Date</th>
             		<th align="left">Delivery Date</th>
             	</tr>
+                @foreach($orders as $order)
                 	<tr>
-                		<td><br /></td>
-                		<td><br /></td>
-                		<td><br /></td>
-                		<td><br /></td>
-                		<td><br /></td>
-                		<td><br /></td>
-                        <td><br /></td>
+                		<td>{{ $myOrdersCounter++.'.' }}</td>
+                		<td>{{ $order->product->user->username }}</td>
+                		<td>{{ $order->product->name }}</td>
+                		<td>{{ $order->quantity }}</td>
+                		<td>{{ $order->status }}</td>
+                		<td>{{ $order->created_at }}</td>
+                        <td>{{ $order->delivery_date }}</td>
                 	</tr>
+                @endforeach
             </table>
         </div>
     </div>
