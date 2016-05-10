@@ -11,9 +11,11 @@ class UsersController extends Controller
 {
     public function profile()
     {
+        $users = User::all()->take(4);
+
         $user = User::find(Auth::user()->id);
 
-        return view('profile', ['user' => $user]);
+        return view('profile', compact('users', 'user'));
     }
 
     public function updateProfile(Request $request)

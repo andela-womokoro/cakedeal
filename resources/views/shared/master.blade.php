@@ -120,18 +120,18 @@
                         Top cake merchants
                         </span>
                     </div>
-                    @for($i = 0; $i < 4; $i++)
+                    @foreach($users as $user)
                         <div class="col-md-2">
                             <center>
-                                 <img src="images/dealer_thumb.jpeg" class="dealer-thumbs shadow1" />
+                                 <img src="{{ $user->avatar_url}}" class="dealer-thumbs shadow1" />
                                  <br />
                                  <span style="font-size:11px; color: #898783;">
-                                     <b>Jane Doe</b>
-                                     <br />Since 23 Dec 2015
+                                     <b>{{ $user->username}}</b>
+                                     <br />{{ $user->created_at->diffForHumans() }}
                                  </span>
                              </center>
                         </div>
-                    @endfor
+                    @endforeach
                     <div class="col-md-2"></div>
                 </div>
             <div class="row">

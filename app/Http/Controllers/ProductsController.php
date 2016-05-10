@@ -17,16 +17,20 @@ class ProductsController extends Controller
 {
     public function uploadProduct()
     {
+        $users = User::all()->take(4);
+
         $categories = ProductCategory::all();
 
-        return view('product_upload', compact('categories'));
+        return view('product_upload', compact('categories', 'users'));
     }
 
     public function getProducts()
     {
+        $users = User::all()->take(4);
+
         $cakes = Product::all();
 
-        return view('app.order', compact('cakes'));
+        return view('app.order', compact('cakes', 'users'));
     }
 
     /**
@@ -69,8 +73,10 @@ class ProductsController extends Controller
 
     public function userProducts()
     {
+        $users = User::all()->take(4);
+
         $products = User::find(Auth::user()->id)->products;
 
-        return view('user_products', ['products' => $products]);
+        return view('user_products', compact('users', 'products'));
     }
 }
