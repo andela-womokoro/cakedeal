@@ -26,24 +26,28 @@
             		<th align="left">Delivery Date</th>
                     <th align="right"></th>
             	</tr>
-            	<tr>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-            		<td><br /></td>
-                    <td>
-                        <div class="form-container" style="margin:0px;">
-                            <form method="link" action="/order/view/1">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="order_id" value="" />
-                                <button type="submit" class="btn btn-default">View</button>
-                            </form>
-                        </div>
-                    </td>
-            	</tr>
+                @foreach($userProducts as $product)
+                    @foreach($product->orders as $order)
+                    	<tr>
+                    		<td>{{ $customerOrdersCounter++.'.' }}</td>
+                    		<td>{{ $order->user->username }}</td>
+                    		<td>{{ $product->name }}</td>
+                    		<td>{{ $order->quantity }}</td>
+                    		<td>{{ $order->status }}</td>
+                    		<td>{{ $order->created_at }}</td>
+                            <td>{{ $order->delivery_date }}</td>
+                            <td>
+                                <div class="form-container" style="margin:0px;">
+                                    <form method="link" action="/order/view/1">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="order_id" value="" />
+                                        <button type="submit" class="btn btn-default">View</button>
+                                    </form>
+                                </div>
+                            </td>
+                    	</tr>
+                    @endforeach
+                @endforeach
             </table>
         </div>
     </div>
@@ -63,7 +67,7 @@
             		<th align="left">Order Date</th>
             		<th align="left">Delivery Date</th>
             	</tr>
-                @foreach($orders as $order)
+                @foreach($userOrders as $order)
                 	<tr>
                 		<td>{{ $myOrdersCounter++.'.' }}</td>
                 		<td>{{ $order->product->user->username }}</td>

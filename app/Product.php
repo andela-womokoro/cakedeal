@@ -47,4 +47,9 @@ class Product extends Model
     {
         return $this->belongsTo('CakeDeal\Category');
     }
+
+    public function orders()
+    {
+        return $this->hasMany('CakeDeal\Order');
+    }
 }
