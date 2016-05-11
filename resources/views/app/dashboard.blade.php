@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="table-responsive">
-                <table class="table table-bordered table-hover table1">
+                <table class="table table-hover table1">
                 	<thead>
                         <tr>
                     		<th colspan="8"><h2>Customer Orders</h2></th>
@@ -45,7 +45,11 @@
                                         <td>
                                             <div class="form-container" style="margin:0px;">
                                                 <form method="link" action="/order/view/{{ $order->id }}">
-                                                    <button type="submit" class="btn btn-default">View</button>
+                                                    @if($order->status == "Canceled")
+                                                        <button type="submit" class="btn btn-default" disabled>View</button>
+                                                    @else
+                                                        <button type="submit" class="btn btn-default">View</button>
+                                                    @endif
                                                 </form>
                                             </div>
                                         </td>
@@ -73,7 +77,7 @@
         <div class="col-sm-12">
             <br />
             <div class="table-responsive">
-                <table class="table table-bordered table-hover table1">
+                <table class="table table-hover table1">
                 	<thead>
                         <tr>
                     		<th colspan="8"><h2>My Orders</h2></th>
@@ -89,6 +93,7 @@
                                 <th align="left">Order Status</th>
                         		<th align="left">Order Date</th>
                         		<th align="left">Delivery Date</th>
+                                <th></th>
                         	</tr>
                         </thead>
                         @foreach($userOrders as $order)
@@ -101,6 +106,17 @@
                             		<td>{{ $order->status }}</td>
                             		<td>{{ $order->created_at }}</td>
                                     <td>{{ $order->delivery_date }}</td>
+                                    <td>
+                                        <div class="form-container" style="margin:0px;">
+                                            <form method="link" action="/dashboard">
+                                                @if($order->status == "Pending")
+                                                    <button type="submit" class="btn btn-default">Cancel</button>
+                                                @else
+                                                    <button type="submit" class="btn btn-default" disabled>Cancel</button>
+                                                @endif
+                                            </form>
+                                        </div>
+                                    </td>
                             	</tr>
                             </tbody>
                         @endforeach
