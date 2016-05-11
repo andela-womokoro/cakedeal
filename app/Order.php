@@ -34,4 +34,14 @@ class Order extends Model
     {
         return $query->where('user_id', Auth::user()->id);
     }
+
+    public function user()
+    {
+        return $this->belongsTo('CakeDeal\User');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo('CakeDeal\Product');
+    }
 }

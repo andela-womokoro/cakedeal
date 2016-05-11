@@ -37,4 +37,19 @@ class Product extends Model
     {
         return $query->where('user_id', Auth::user()->id);
     }
+
+    public function user()
+    {
+        return $this->belongsTo('CakeDeal\User');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('CakeDeal\Category');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany('CakeDeal\Order');
+    }
 }

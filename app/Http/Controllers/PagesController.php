@@ -22,12 +22,14 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-        $users = User::all()->take(4);
+        $userId = Auth::user()->id;
 
-        $order = Order::personal()->get();
+        //fetch all orders this user made
+        $userOrders = User::find($userId)->orders;
 
-        $cakes = Product::personal()->get();
+        //fetch all of this user's products that were ordered for
+        $userProducts = Product::has('orders')->where('user_id', '=', $userId)->get();
 
-        return view('app.dashboard', compact('cakes', 'order', 'users'));
+        return view('app.dashboard', ['userOrders' => $userOrders, 'userProducts' => $userProducts]);
     }
 }
