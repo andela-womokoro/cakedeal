@@ -263,3 +263,7 @@ input, select, textarea {
 .alert {
 	font-size: 12px;
 }
+
+ {
+	border: 1px solid red;
+}

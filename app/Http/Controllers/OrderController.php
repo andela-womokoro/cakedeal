@@ -3,6 +3,7 @@
 namespace CakeDeal\Http\Controllers;
 
 use Auth;
+use CakeDeal\User;
 use CakeDeal\Order;
 use CakeDeal\Product;
 use Illuminate\Http\Request;
@@ -45,15 +46,15 @@ class OrderController extends Controller
     public function changeOrderStatus(Request $request)
     {
         $id = $request->input('id');
-        $newState = $request->input('new_state');
+        $newState = $request->input('submit');
 
         $order = Order::find($id);
-        // $order->status = $newState;
-        // $order->save();
+        $order->status = $newState;
+        $order->save();
 
         return view('order_details', [
                         'order' => $order, 
-                        'message' => 'You have accepted this order. Order status has been updated to \".$newState.\"'
+                        'message' => 'This order\'s status has now been updated to "'.$newState.'"'
                         ]);
     }
 }
