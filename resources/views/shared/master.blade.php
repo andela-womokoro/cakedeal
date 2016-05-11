@@ -66,6 +66,7 @@
                         <a href="/products/uploaded"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;My Products</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/product/upload"><i class="fa fa-star" aria-hidden="true"></i>&nbsp;Sell Cakes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/products"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Order Cake</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/orders/user"><i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp;My Orders</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="/profile"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     @else
                         <a href="">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -130,7 +131,7 @@
                              <br />
                              <span style="font-size:11px; color: #898783;">
                                  <b>{{ $user->username}}</b>
-                                 <br />{{ $user->created_at->diffForHumans() }}
+                                 <br />Since {{ date('F Y', strtotime($user->created_at)) }}
                              </span>
                          </center>
                     </div>
