@@ -108,7 +108,7 @@
 
     @yield('content')
 
-    <!-- <div class="footer-push"></div> -->
+    <div class="footer-push"></div>
 
     <!-- Footer -->
     @if(Route::getCurrentRoute()->getPath() == "/")
