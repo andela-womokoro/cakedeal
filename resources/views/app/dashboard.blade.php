@@ -33,29 +33,31 @@
                         <thead>
                         @foreach($userProducts as $product)
                             @foreach($product->orders as $order)
-                            	<tbody>
-                                    <tr>
-                                		<td>{{ $customerOrdersCounter++.'.' }}</td>
-                                		<td>{{ $order->user->username }}</td>
-                                		<td>{{ $product->name }}</td>
-                                		<td>{{ $order->quantity }}</td>
-                                		<td>{{ $order->status }}</td>
-                                		<td>{{ date('D M d, Y', strtotime($order->created_at)) }}</td>
-                                        <td>{{ date('h:i A', strtotime($order->created_at)) }}</td>
-                                        <td>{{ date('D M d, Y', strtotime($order->delivery_date)) }}</td>
-                                        <td>
-                                            <div class="form-container" style="margin:0px;">
-                                                <form method="link" action="/order/view/{{ $order->id }}">
-                                                    @if($order->status == "Canceled")
-                                                        <button type="submit" class="btn btn-default" disabled>View</button>
-                                                    @else
-                                                        <button type="submit" class="btn btn-default">View</button>
-                                                    @endif
-                                                </form>
-                                            </div>
-                                        </td>
-                                	</tr>
-                                </tbody>
+                                @if($order->status != 'Rejected')
+                                	<tbody>
+                                        <tr>
+                                    		<td>{{ $customerOrdersCounter++.'.' }}</td>
+                                    		<td>{{ $order->user->username }}</td>
+                                    		<td>{{ $product->name }}</td>
+                                    		<td>{{ $order->quantity }}</td>
+                                    		<td>{{ $order->status }}</td>
+                                    		<td>{{ date('D M d, Y', strtotime($order->created_at)) }}</td>
+                                            <td>{{ date('h:i A', strtotime($order->created_at)) }}</td>
+                                            <td>{{ date('D M d, Y', strtotime($order->delivery_date)) }}</td>
+                                            <td>
+                                                <div class="form-container" style="margin:0px;">
+                                                    <form method="link" action="/order/view/{{ $order->id }}">
+                                                        @if($order->status == "Canceled")
+                                                            <button type="submit" class="btn btn-default" disabled>View</button>
+                                                        @else
+                                                            <button type="submit" class="btn btn-default">View</button>
+                                                        @endif
+                                                    </form>
+                                                </div>
+                                            </td>
+                                    	</tr>
+                                    </tbody>
+                                @endif
                             @endforeach
                         @endforeach
                     @else

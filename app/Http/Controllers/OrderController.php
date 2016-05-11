@@ -60,11 +60,38 @@ class OrderController extends Controller
 
     public function getUserOrders()
     {
+        return view('user_orders', ['userOrders' => $this->fetchUserOrders()]);
+    }
+
+    public function cancelOrDeleteOrder(Request $request)
+    {
+        $id = $request->input('id');
+        $action = $request->input('submit');
+        $message = "";
+
+        $order = Order::find($id);
+
+        if ($action == "cancel") {
+            $order->status = 'Canceled';
+            $order->save();
+
+            $message = "You have successfully canceled the order.";
+        } elseif ($action == "delete") {
+            $order->delete();
+
+            $message = "You have successfully deleted the order.";
+        }
+        
+        return view('user_orders', ['userOrders' => $this->fetchUserOrders(), 'message' => $message]);
+    }
+
+    public static function fetchUserOrders()
+    {
         $userId = Auth::user()->id;
 
         //fetch all orders this user made
-        $userOrders = User::find($userId)->orders;
+        $orders = User::find($userId)->orders;
 
-        return view('user_orders', ['userOrders' => $userOrders]);
+        return $orders;
     }
 }

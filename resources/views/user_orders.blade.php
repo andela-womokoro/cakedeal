@@ -10,6 +10,15 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
+        	@if(isset($message))
+                <div class="row">
+                      <div class="col-md-12"> 
+                          <div class="alert alert-info" role="alert">
+                              {{ $message }}
+                          </div>  
+                      </div>
+                </div>
+          	@endif
             <div class="table-responsive">
                 <table class="table table-hover table1">
                 	<thead>
@@ -21,7 +30,7 @@
                     	<thead>
                             <tr>
                         		<th></th>
-                        		<th align="left">Dealer</th>
+                        		<th align="left">Merchant</th>
                         		<th align="left">Product</th>
                         		<th align="left">Quantity</th>
                                 <th align="left">Order Status</th>
@@ -44,11 +53,13 @@
                                     <td>{{ date('D M d, Y', strtotime($order->delivery_date)) }}</td>
                                     <td>
                                         <div class="form-container" style="margin:0px;">
-                                            <form method="link" action="/dashboard">
+                                            <form method="post" action="/orders/user">
+                                            	{{ csrf_field() }}
+                                            	<input type="hidden" name="id" value="{{ $order->id }}" />
                                                 @if($order->status == "Pending")
-                                                    <button type="submit" class="btn btn-default">Cancel</button>
-                                                @else
-                                                    <button type="submit" class="btn btn-default" disabled>Cancel</button>
+                                                    <button type="submit" name="submit" value="cancel" class="btn btn-default">Cancel</button>
+                                                @elseif($order->status == "Canceled" || $order->status == "Rejected")
+                                                    <button type="submit" name="submit" value="delete" class="btn btn-default">Delete</button>
                                                 @endif
                                             </form>
                                         </div>
