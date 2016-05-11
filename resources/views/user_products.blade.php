@@ -8,7 +8,7 @@
 		<div class="col-md-12">
 			 <h2 class="heading2">My Products</h2>
 			 <center>
-				 @if($products)
+				 @if($products->count() > 0)
 			        @foreach($products as $product)
 			            <div class="featured shadow1">
 			                <img src="{{ $product->image_url }}" class="img-responsive photo" border="0" />
@@ -28,7 +28,9 @@
 			            </div>
 			        @endforeach
 		        @else
-		            <p>No Cake uploaded yet!</p>
+		            <div class="alert alert-info" role="alert">
+                        You currently have no products to display. If you choose to sell products later on this site, your products will appear here.
+                    </div>
 		        @endif
 	        </center>
 		</div>

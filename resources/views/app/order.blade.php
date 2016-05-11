@@ -24,7 +24,9 @@
                     @endforeach
                 @endif
                 @if( $cakes->isEmpty() )
-                    <h3>No Cake uploaded yet!</h3>
+                <div class="alert alert-info" role="alert">
+                    There are currently no cakes for you to order. Please check again later.
+                </div>
                 @endif
             </center>
         </div>
