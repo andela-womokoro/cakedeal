@@ -108,32 +108,40 @@
 
     @yield('content')
 
+    <!-- <div class="footer-push"></div> -->
+
     <!-- Footer -->
+    @if(Route::getCurrentRoute()->getPath() == "/")
     <nav class="navbar navbar-default footer-top">
         <div class="container">
-               <div class="row" style="padding-top: 25px; padding-bottom: 50px; border-bottom:1px ridge #ddd;">
-                    <div class="col-md-2">
-                        <span class="title-left">CAKE</span>
-                        <span class="title-right">DEAL</span>
-                        <br clear="left" />
-                        <span style="font-size:11px; color: #898783">
-                        Top cake merchants
-                        </span>
-                    </div>
-                    @foreach($users as $user)
-                        <div class="col-md-2">
-                            <center>
-                                 <img src="{{ $user->avatar_url}}" class="dealer-thumbs shadow1" />
-                                 <br />
-                                 <span style="font-size:11px; color: #898783;">
-                                     <b>{{ $user->username}}</b>
-                                     <br />{{ $user->created_at->diffForHumans() }}
-                                 </span>
-                             </center>
-                        </div>
-                    @endforeach
-                    <div class="col-md-2"></div>
+           <div class="row" style="padding-top: 25px; padding-bottom: 50px; border-bottom:1px ridge #ddd;">
+                <div class="col-md-2">
+                    <span class="title-left">CAKE</span>
+                    <span class="title-right">DEAL</span>
+                    <br clear="left" />
+                    <span style="font-size:11px; color: #898783">
+                    Top cake merchants
+                    </span>
                 </div>
+                @foreach($users as $user)
+                    <div class="col-md-2">
+                        <center>
+                             <img src="{{ $user->avatar_url}}" class="dealer-thumbs shadow1" />
+                             <br />
+                             <span style="font-size:11px; color: #898783;">
+                                 <b>{{ $user->username}}</b>
+                                 <br />{{ $user->created_at->diffForHumans() }}
+                             </span>
+                         </center>
+                    </div>
+                @endforeach
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </nav>
+    @endif
+    <nav class="navbar navbar-default footer-top" style="margin-top:0px;">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12" style="padding: 25px; text-align: center; font-size:12px;">
                     <a href="">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
