@@ -12,9 +12,11 @@ class OrderController extends Controller
 {
     public function index($id)
     {
+        $users = User::all()->take(4);
+
         $order = Product::where('id', $id)->first();
 
-        return view('app.show', compact('order'));
+        return view('app.show', compact('order', 'users'));
     }
 
     public function store(Request $request, $id)
@@ -31,11 +33,13 @@ class OrderController extends Controller
         return redirect()->to('/dashboard');
     }
 
-    public function viewOrder($id) 
+    public function viewOrder($id)
     {
+        $users = User::all()->take(4);
+
         $order = Order::find($id);
 
-        return view('order_details', ['order' => $order]);
+        return view('order_details', compact('users', 'order'));
     }
 
     public function changeOrderStatus(Request $request)

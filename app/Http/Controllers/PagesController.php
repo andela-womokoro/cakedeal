@@ -13,9 +13,11 @@ class PagesController extends Controller
 {
     public function index()
     {
+        $users = User::all()->take(4);
+
         $cakes = Product::all()->take(3);
 
-        return view('landing', compact('cakes'));
+        return view('landing', compact('cakes', 'users'));
     }
 
     public function dashboard()
