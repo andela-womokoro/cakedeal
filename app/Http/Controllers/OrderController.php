@@ -57,4 +57,14 @@ class OrderController extends Controller
                         'message' => 'This order\'s status has now been updated to "'.$newState.'"'
                         ]);
     }
+
+    public function getUserOrders()
+    {
+        $userId = Auth::user()->id;
+
+        //fetch all orders this user made
+        $userOrders = User::find($userId)->orders;
+
+        return view('user_orders', ['userOrders' => $userOrders]);
+    }
 }

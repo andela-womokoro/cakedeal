@@ -24,12 +24,9 @@ class PagesController extends Controller
     {
         $userId = Auth::user()->id;
 
-        //fetch all orders this user made
-        $userOrders = User::find($userId)->orders;
-
         //fetch all of this user's products that were ordered for
         $userProducts = Product::has('orders')->where('user_id', '=', $userId)->get();
 
-        return view('app.dashboard', ['userOrders' => $userOrders, 'userProducts' => $userProducts]);
+        return view('app.dashboard', ['userProducts' => $userProducts]);
     }
 }
