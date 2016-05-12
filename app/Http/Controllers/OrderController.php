@@ -3,6 +3,7 @@
 namespace CakeDeal\Http\Controllers;
 
 use Auth;
+use Mail;
 use CakeDeal\User;
 use CakeDeal\Order;
 use CakeDeal\Product;
@@ -22,16 +23,24 @@ class OrderController extends Controller
 
     public function store(Request $request, $id)
     {
-        $order = new Order();
-        $order->user_id = Auth::user()->id;
-        $order->product_id = Product::find($id)->first()->id;
-        $order->quantity = $request->input('quantity');
-        $order->message = $request->input('message');
-        $order->delivery_date = $request->input('delivery-date');
+        $order = Product::where('id', $id)->first();
+        $cakeorder = new Order();
+        $cakeorder->user_id = Auth::user()->id;
+        $cakeorder->product_id = Product::find($id)->first()->id;
+        $cakeorder->quantity = $request->input('quantity');
+        $cakeorder->message = $request->input('message');
+        $cakeorder->delivery_date = $request->input('delivery-date');
 
-        $order->save();
+        $cakeorder->save();
 
-        return redirect()->to('/dashboard');
+        $url = 'http://www.cakedeal.herokuapp.com/dashboard';
+        Mail::send('emails.order', ['url' => $url], function($m) use ($id) {
+            $m->from(Auth::user()->email, Auth::user()->username);
+            $m->to(Product::find($id)->user->email);
+            $m->subject('I love your cake and I want to have a feel');
+        });
+
+        return view('app.show', compact('order'))->with(['message' => 'Your order has been created!']);
     }
 
     public function viewOrder($id)
@@ -53,7 +62,7 @@ class OrderController extends Controller
         $order->save();
 
         return view('order_details', [
-                        'order' => $order, 
+                        'order' => $order,
                         'message' => 'This order\'s status has now been updated to "'.$newState.'"'
                         ]);
     }
