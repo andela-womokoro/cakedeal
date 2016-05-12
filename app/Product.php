@@ -45,7 +45,7 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo('CakeDeal\Category');
+        return $this->belongsTo('CakeDeal\ProductCategory');
     }
 
     public function orders()

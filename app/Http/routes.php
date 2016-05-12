@@ -34,8 +34,9 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/products/uploaded', 'ProductsController@userProducts');
 	Route::get('/product/upload', 'ProductsController@uploadProduct');
 	Route::post('/product/new', 'ProductsController@store');
-	Route::get('/product/edit/{id}', 'OrderController@editProduct');
-	Route::get('/product/delete/{id}', 'OrderController@deleteProduct');
+	Route::get('/product/edit/{id}', 'ProductsController@editProduct');
+	Route::post('/product/edit', 'ProductsController@postEditProduct');
+	Route::get('/product/delete/{id}', 'ProductsController@deleteProduct');
 	Route::post('/make-order/{id}', 'OrderController@store');
 	Route::get('/product/{id}', 'OrderController@index');
 });
