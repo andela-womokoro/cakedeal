@@ -41,7 +41,7 @@
 						</select>
 					</div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Price (e.g. 1200.95)" name="price" value="{{$product->price}}"  maxlength="6" required style="width:150px;">
+                        <input type="text" class="form-control" placeholder="Price (e.g. 1200.95)" name="price" value="{{$product->price}}"  maxlength="8" required style="width:150px;">
                     </div>
                     <div class="form-group">
                     	<p>If you wish to change the product's current image (shown above) please specify the location of the new image's file.</p>

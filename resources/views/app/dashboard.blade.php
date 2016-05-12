@@ -33,7 +33,7 @@
                         <thead>
                         @foreach($userProducts as $product)
                             @foreach($product->orders as $order)
-                                @if($order->status != 'Rejected')
+                                @if($order->status != 'Declined')
                                 	<tbody>
                                         <tr>
                                     		<td>{{ $customerOrdersCounter++.'.' }}</td>
