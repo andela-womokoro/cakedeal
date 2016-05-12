@@ -58,7 +58,7 @@
                                             	<input type="hidden" name="id" value="{{ $order->id }}" />
                                                 @if($order->status == "Pending")
                                                     <button type="submit" name="submit" value="cancel" class="btn btn-default">Cancel</button>
-                                                @elseif($order->status == "Canceled" || $order->status == "Rejected")
+                                                @elseif($order->status == "Canceled" || $order->status == "Declined")
                                                     <button type="submit" name="submit" value="delete" class="btn btn-default">Delete</button>
                                                 @endif
                                             </form>

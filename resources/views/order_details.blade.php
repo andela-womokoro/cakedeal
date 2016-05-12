@@ -48,7 +48,7 @@
                         	</tr>
                         </tbody>
                   </table>
-                  <!-- order states: Pending, Processing, Delivered, Canceled, Rejected -->
+                  <!-- order states: Pending, Processing, Delivered, Canceled, Declined -->
 
 			<div class="form-container">
 			    <form method="post" action="/order/view">
@@ -57,7 +57,7 @@
                           <input type="hidden" name="new_state" value="" />
                           @if($order->status == "Pending")
                                 <button type="submit" name="submit" value="Processing" class="btn btn-default">Accept Order</button>&nbsp;&nbsp;
-                                <button type="submit" name="submit" value="Rejected" class="btn btn-default">Reject Order</button>&nbsp;&nbsp;
+                                <button type="submit" name="submit" value="Declined" class="btn btn-default">Decline Order</button>&nbsp;&nbsp;
                           @elseif($order->status == "Processing")
                                <button type="submit" name="submit" value="Delivered" class="btn btn-default">Mark as Delivered</button>&nbsp;&nbsp;
                           @endif

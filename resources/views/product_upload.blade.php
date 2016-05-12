@@ -24,7 +24,7 @@
 							</select>
 						</div>
 	                    <div class="form-group">
-	                        <input type="text" class="form-control" placeholder="Price (e.g. 1200.95)" name="price" value=""  maxlength="6" required style="width:150px;">
+	                        <input type="text" class="form-control" placeholder="Price (e.g. 1200.95)" name="price" value=""  maxlength="8" required style="width:150px;">
 	                    </div>
 	                    <div class="form-group">
 	                        <input type="file" name="image_file" required style="background-color: #fff;" />

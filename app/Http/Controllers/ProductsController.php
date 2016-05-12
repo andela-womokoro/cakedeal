@@ -73,11 +73,9 @@ class ProductsController extends Controller
 
     public function userProducts()
     {
-        $users = User::all()->take(4);
-
         $products = User::find(Auth::user()->id)->products;
 
-        return view('user_products', compact('users', 'products'));
+        return view('user_products', ['products' => $products]);
     }
 
     public function editProduct($id)
@@ -112,5 +110,19 @@ class ProductsController extends Controller
                 'categories' => $productCategories, 
                 'message' => 'This product\'s information has been successfully updated.'
                 ]);
+    }
+
+    public function deleteProduct(Request $request)
+    {
+        $product = Product::find($request->input('product_id'));
+        $productName = $product->name;
+        $product->delete();
+
+        $products = User::find(Auth::user()->id)->products;
+
+        return view('user_products', [
+                        'products' => $products, 
+                        'message' => "Successfully deleted $productName from your available products."
+                    ]);
     }
 }
