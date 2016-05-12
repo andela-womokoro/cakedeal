@@ -5,7 +5,15 @@
 <div class="container">
     <div class="row">
   <div class="col-sm-9">
-
+    @if(isset($message))
+        <div class="row">
+              <div class="col-md-12">
+                  <div class="alert alert-info" role="alert">
+                      {{ $message }}
+                  </div>
+              </div>
+        </div>
+  @endif
         <!-- Cake order form -->
         <div class="form-container">
           <h2>Make a Cake Order</h2>
