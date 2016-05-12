@@ -27,6 +27,7 @@ class OrderController extends Controller
         $order->product_id = Product::find($id)->first()->id;
         $order->quantity = $request->input('quantity');
         $order->message = $request->input('message');
+        $order->status = "Pending";
         $order->delivery_date = $request->input('delivery-date');
 
         $order->save();
