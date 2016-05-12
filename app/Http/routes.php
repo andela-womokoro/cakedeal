@@ -24,6 +24,8 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 Route::group(['middleware' => ['auth']], function () {
 	// Protected routes using 'auth' middleware
 	Route::get('/dashboard', 'PagesController@dashboard');
+	Route::get('/orders/user', 'OrderController@getUserOrders');
+	Route::post('/orders/user', 'OrderController@cancelOrDeleteOrder');
 	Route::get('/order/view/{id}', 'OrderController@viewOrder');
 	Route::post('/order/view', 'OrderController@changeOrderStatus');
 	Route::get('/profile', 'UsersController@profile');
@@ -32,8 +34,9 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/products/uploaded', 'ProductsController@userProducts');
 	Route::get('/product/upload', 'ProductsController@uploadProduct');
 	Route::post('/product/new', 'ProductsController@store');
-	Route::get('/product/edit/{id}', 'OrderController@editProduct');
-	Route::get('/product/delete/{id}', 'OrderController@deleteProduct');
+	Route::get('/product/edit/{id}', 'ProductsController@editProduct');
+	Route::post('/product/edit', 'ProductsController@postEditProduct');
+	Route::post('/product/delete', 'ProductsController@deleteProduct');
 	Route::post('/make-order/{id}', 'OrderController@store');
 	Route::get('/product/{id}', 'OrderController@index');
 });

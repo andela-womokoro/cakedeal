@@ -30,7 +30,6 @@ class OrderController extends Controller
         $cakeorder->quantity = $request->input('quantity');
         $cakeorder->message = $request->input('message');
         $cakeorder->delivery_date = $request->input('delivery-date');
-
         $cakeorder->save();
 
         $url = 'http://www.cakedeal.herokuapp.com/dashboard';
@@ -65,5 +64,42 @@ class OrderController extends Controller
                         'order' => $order,
                         'message' => 'This order\'s status has now been updated to "'.$newState.'"'
                         ]);
+    }
+
+    public function getUserOrders()
+    {
+        return view('user_orders', ['userOrders' => $this->fetchUserOrders()]);
+    }
+
+    public function cancelOrDeleteOrder(Request $request)
+    {
+        $id = $request->input('id');
+        $action = $request->input('submit');
+        $message = "";
+
+        $order = Order::find($id);
+
+        if ($action == "cancel") {
+            $order->status = 'Canceled';
+            $order->save();
+
+            $message = "You have successfully canceled the order.";
+        } elseif ($action == "delete") {
+            $order->delete();
+
+            $message = "You have successfully deleted the order.";
+        }
+
+        return view('user_orders', ['userOrders' => $this->fetchUserOrders(), 'message' => $message]);
+    }
+
+    public static function fetchUserOrders()
+    {
+        $userId = Auth::user()->id;
+
+        //fetch all orders this user made
+        $orders = User::find($userId)->orders;
+
+        return $orders;
     }
 }

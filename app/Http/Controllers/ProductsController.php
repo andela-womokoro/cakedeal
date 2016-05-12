@@ -73,10 +73,56 @@ class ProductsController extends Controller
 
     public function userProducts()
     {
-        $users = User::all()->take(4);
+        $products = User::find(Auth::user()->id)->products;
+
+        return view('user_products', ['products' => $products]);
+    }
+
+    public function editProduct($id)
+    {
+        $product = Product::find($id);
+        $productCategories = ProductCategory::all();
+
+        return view('product_edit', ['product' => $product, 'categories' => $productCategories]);
+    }
+
+    public function postEditProduct(Request $request)
+    {
+        $product = Product::find($request->input('product_id'));
+
+        $product->category_id = $request->input('category');
+        $product->user_id = Auth::user()->id;
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+
+        if (! is_null($request->file('image_file'))) {
+            Cloudder::upload($request->file('image_file'));
+            $product->image_url = Cloudder::getResult()['url'];
+        }
+
+        $product->save();
+
+        $productCategories = ProductCategory::all();
+
+        return view('product_edit', [
+                'product' => $product, 
+                'categories' => $productCategories, 
+                'message' => 'This product\'s information has been successfully updated.'
+                ]);
+    }
+
+    public function deleteProduct(Request $request)
+    {
+        $product = Product::find($request->input('product_id'));
+        $productName = $product->name;
+        $product->delete();
 
         $products = User::find(Auth::user()->id)->products;
 
-        return view('user_products', compact('users', 'products'));
+        return view('user_products', [
+                        'products' => $products, 
+                        'message' => "Successfully deleted $productName from your available products."
+                    ]);
     }
 }
