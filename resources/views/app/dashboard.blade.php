@@ -65,7 +65,7 @@
                             <tr>
                                 <td colspan="8">
                                     <div class="alert alert-info" role="alert">
-                                        You're currently not selling anything. If you choose to sell products later on this site, your customers' orders will appear here. In the main time, happy shopping!
+                                        You currently have no customer orders. If you choose to sell products through this site, your customers' orders will appear here. In the main time, happy shopping!
                                     </div>
                                 </td>
                             </tr>

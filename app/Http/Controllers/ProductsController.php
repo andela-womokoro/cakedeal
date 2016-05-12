@@ -26,7 +26,7 @@ class ProductsController extends Controller
 
     public function getProducts()
     {
-        $users = User::all()->take(4);
+        $users = User::all();
 
         $cakes = Product::all();
 

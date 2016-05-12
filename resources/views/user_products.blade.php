@@ -15,8 +15,8 @@
     @endif
 	<div class="row">
 		<div class="col-md-12">
-			 <h2 class="heading2">My Products</h2>
-			 <center>
+			<h2 class="heading2">My Products</h2>
+			<center>
 				 @if($products->count() > 0)
 			        @foreach($products as $product)
 			            <div class="featured shadow1">
