@@ -17,7 +17,10 @@
         <!-- Cake order form -->
         <div class="form-container">
           <h2>Make a Cake Order</h2>
-            <form method="post" action="/make-order/{{ $order->id }}">
+            <form method="post" action="/make-order/{{ $product->id }}">
+                <div class="form-group">
+                    <img src="{{ $product->image_url}}" style="width:250px; border:2px double #f7f7f0" />
+                  </div>
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Quantity" name="quantity" value=""  maxlength="5" required style="width:100px;">
                 </div>
@@ -32,6 +35,7 @@
                 </div>
                 <button type="submit" class="btn btn-default">Place Order</button>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" name="product_id" value="{{ $product->id }}">
             </form>
         </div>
 

@@ -53,19 +53,51 @@
                                     <td>{{ date('D M d, Y', strtotime($order->delivery_date)) }}</td>
                                     <td>
                                         <div class="form-container" style="margin:0px;">
-                                            <form method="post" action="/orders/user">
-                                            	{{ csrf_field() }}
-                                            	<input type="hidden" name="id" value="{{ $order->id }}" />
-                                                @if($order->status == "Pending")
-                                                    <button type="submit" name="submit" value="cancel" class="btn btn-default">Cancel</button>
-                                                @elseif($order->status == "Canceled" || $order->status == "Declined")
-                                                    <button type="submit" name="submit" value="delete" class="btn btn-default">Delete</button>
-                                                @endif
+                                            <form>
+                                            @if($order->status == "Pending")
+                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#{{$order->id}}">Cancel</button>
+                                            @elseif($order->status == "Canceled" || $order->status == "Declined")
+                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#{{$order->id}}">Delete</button>
+                                            @endif
                                             </form>
                                         </div>
                                     </td>
                             	</tr>
                             </tbody>
+
+                            <!-- Order cancellation/deletion modal -->
+                            <div class="modal fade" id="{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document" style="width: 500px;">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">Warning!</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            @if($order->status == "Pending")
+                                                <p>Do you really want to cancel the order?</p>
+                                            @elseif($order->status == "Canceled" || $order->status == "Declined")
+                                                <p>Do you really want to delete the order?</p>
+                                            @endif
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="form-container" style="margin-bottom:0px;">
+                                                <form method="post" action="/orders/user">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" name="id" value="{{ $order->id }}" />
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                                    &nbsp;&nbsp;
+                                                    @if($order->status == "Pending")
+                                                        <button type="submit" name="submit" value="cancel" class="btn btn-default">Yes</button>
+                                                    @elseif($order->status == "Canceled" || $order->status == "Declined")
+                                                        <button type="submit" name="submit" value="delete" class="btn btn-default">Yes</button>
+                                                    @endif
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
                     @else
                         <thead>
