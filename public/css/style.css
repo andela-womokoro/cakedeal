@@ -162,14 +162,19 @@
 
 .dealer-thumbs {
 	width: 133px;
-	height: 61px;
+	height: 100px;
 	border: 2px solid #ccccc6;
 	border-radius: 3px;
 	margin-bottom: 20px;
+	overflow: hidden;
 }
 
 .dealer-thumbs:hover {
 	opacity: 0.9;
+}
+
+.dealer-thumbs img {
+	width: 100%;
 }
 
 .modal {
