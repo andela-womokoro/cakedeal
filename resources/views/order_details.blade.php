@@ -44,8 +44,11 @@
                         	</tr>
                         	<tr>
                         		<td>Delivery Date</td>
-                                    <td align="right">{{ date('D M d, Y', strtotime($order->delivery_date)) }}</td>
+                                <td align="right">{{ date('D M d, Y', strtotime($order->delivery_date)) }}</td>
                         	</tr>
+                            <tr>
+                                <td>Delivery Address</td><td align="right">{{ $order->address }}</td>
+                            </tr>
                         </tbody>
                   </table>
                   <!-- order states: Pending, Processing, Delivered, Canceled, Declined -->
