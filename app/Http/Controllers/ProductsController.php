@@ -42,18 +42,6 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        // $validator = Validator::make($request->all(), [
-        //     'name'          => 'required|min:1',
-        //     'description'   => 'required|min:15',
-        //     'price'  => 'required',
-        //     'image_url'    => 'required',
-        // ]);
-
-        // if ($validator->fails()) {
-
-        //     return Redirect::back()->withInput();
-        // }
-
         $img =  $request->file('image_file');
         Cloudder::upload($img);
         $imgurl = Cloudder::getResult()['url'];

@@ -127,13 +127,15 @@
                 @foreach($users as $user)
                     <div class="col-md-2">
                         <center>
-                             <img src="{{ $user->avatar_url}}" class="dealer-thumbs shadow1" />
-                             <br />
-                             <span style="font-size:11px; color: #898783;">
-                                 <b>{{ $user->username}}</b>
-                                 <br />Since {{ date('F Y', strtotime($user->created_at)) }}
-                             </span>
-                         </center>
+                            <div class="dealer-thumbs shadow1">
+                                <img src="{{ $user->avatar_url}}" />
+                            </div>
+                            <br />
+                            <span style="font-size:11px; color: #898783;">
+                                <b>{{ $user->username}}</b>
+                                <br />Since {{ date('F Y', strtotime($user->created_at)) }}
+                            </span>
+                        </center>
                     </div>
                 @endforeach
                 <div class="col-md-2"></div>
