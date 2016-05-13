@@ -29,10 +29,11 @@ class OrderController extends Controller
         $cakeorder->product_id = Product::find($id)->first()->id;
         $cakeorder->quantity = $request->input('quantity');
         $cakeorder->message = $request->input('message');
+        $cakeorder->address = $request->input('address');
         $cakeorder->delivery_date = $request->input('delivery-date');
         $cakeorder->save();
 
-        $url = 'http://www.cakedeal.herokuapp.com/dashboard';
+        $url = 'http://cakedeal.herokuapp.com/dashboard';
         Mail::send('emails.order', ['url' => $url], function($m) use ($id) {
             $m->from(Auth::user()->email, Auth::user()->username);
             $m->to(Product::find($id)->user->email);
