@@ -13,15 +13,6 @@ use CakeDeal\Http\Requests;
 
 class OrderController extends Controller
 {
-    // public function index($id)
-    // {
-    //     $users = User::all()->take(4);
-
-    //     $order = Product::where('id', $id)->first();
-
-    //     return view('app.show', compact('order', 'users'));
-    // }
-
     public function startOrder($id)
     {
         $product = Product::find($id);
@@ -33,10 +24,8 @@ class OrderController extends Controller
     {
         $productOrdered = Product::find($request->input('product_id'));
 
-        // $order = Product::where('id', $id)->first();
         $cakeorder = new Order();
         $cakeorder->user_id = Auth::user()->id;
-        // $cakeorder->product_id = Product::find($id)->first()->id;
         $cakeorder->product_id = $productOrdered->id;
         $cakeorder->quantity = $request->input('quantity');
         $cakeorder->message = $request->input('message');
@@ -50,17 +39,14 @@ class OrderController extends Controller
         $response = $this->sendTextMessage($merchantPhoneNo, $textMessage);
 
 
-        //send order notification email to merchant
-        /*
-        $url = 'http://www.cakedeal.herokuapp.com/dashboard';
+        //send new customer order notification email to merchant
+        $url = 'http://cakedeal.herokuapp.com/dashboard';
         Mail::send('emails.order', ['url' => $url], function($m) use ($id) {
             $m->from(Auth::user()->email, Auth::user()->username);
             $m->to(Product::find($id)->user->email);
             $m->subject('I love your cake and I want to have a feel');
         });
-        */
 
-        // return view('app.show', compact('order'))->with(['message' => 'Your order has been created!']);
         return view('app.show', ['product' => $productOrdered, 'message' => 'Your order was made successfully.']);
     }
 
