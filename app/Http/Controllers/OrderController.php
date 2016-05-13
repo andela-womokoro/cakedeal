@@ -31,6 +31,7 @@ class OrderController extends Controller
         $cakeorder->message = $request->input('message');
         $cakeorder->status = 'Pending';
         $cakeorder->delivery_date = $request->input('delivery-date');
+        $cakeorder->address = $request->input('address');
         $cakeorder->save();
 
         //send new customer order notification text message to merchant
